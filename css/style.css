@@ -104,76 +104,37 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23f59e0b' stroke-linecap='round'%3E%3Cpath d='M40,8 C22,8 10,24 10,40 C10,56 25,66 40,76 C55,66 70,56 70,40 C70,24 58,8 40,8 Z' stroke-width='1.2' stroke-opacity='0.2'/%3E%3Cellipse cx='40' cy='32' rx='10' ry='6' stroke='%2334d399' stroke-width='0.9' stroke-opacity='0.2'/%3E%3Cellipse cx='40' cy='48' rx='10' ry='6' stroke='%2334d399' stroke-width='0.9' stroke-opacity='0.2'/%3E%3Cellipse cx='32' cy='40' rx='6' ry='10' stroke='%2334d399' stroke-width='0.9' stroke-opacity='0.2'/%3E%3Cellipse cx='48' cy='40' rx='6' ry='10' stroke='%2334d399' stroke-width='0.9' stroke-opacity='0.2'/%3E%3Ccircle cx='40' cy='40' r='2.5' fill='%23f59e0b' fill-opacity='0.3'/%3E%3Ccircle cx='0' cy='0' r='10' stroke-dasharray='2,2' stroke-opacity='0.12'/%3E%3Ccircle cx='80' cy='0' r='10' stroke-dasharray='2,2' stroke-opacity='0.12'/%3E%3Ccircle cx='0' cy='80' r='10' stroke-dasharray='2,2' stroke-opacity='0.12'/%3E%3Ccircle cx='80' cy='80' r='10' stroke-dasharray='2,2' stroke-opacity='0.12'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* --- ANIMASI DRIFT / PAN UNTUK LATAR BELAKANG BATIK --- */
-@keyframes batikPanSlow {
-  0% { background-position: 0px 0px; }
-  100% { background-position: 120px 70px; }
-}
-
-@keyframes batikPanDiag {
-  0% { background-position: 0px 0px; }
-  100% { background-position: 80px 80px; }
-}
-
-.animate-batik-pan {
-  animation: batikPanSlow 25s linear infinite;
-}
-
-.animate-batik-diag {
-  animation: batikPanDiag 22s linear infinite;
-}
-
-/* --- WAYANG GUNUNGAN (KAYON) STYLING & ANIMATION --- */
+/* --- WAYANG GUNUNGAN (KAYON) STYLING & HARDWARE-ACCELERATED ANIMATION --- */
 @keyframes floatWayangAnim {
-  0% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-14px) rotate(0.8deg);
-  }
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-}
-
-@keyframes pulseGununganGlow {
   0%, 100% {
-    filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.35)) drop-shadow(0 0 35px rgba(129, 140, 248, 0.15));
+    transform: translateY(0px);
   }
   50% {
-    filter: drop-shadow(0 0 30px rgba(245, 158, 11, 0.65)) drop-shadow(0 0 50px rgba(245, 158, 11, 0.3));
+    transform: translateY(-8px);
   }
 }
 
 .animate-float-wayang {
-  animation: floatWayangAnim 8s ease-in-out infinite, pulseGununganGlow 4s ease-in-out infinite;
+  animation: floatWayangAnim 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .wayang-interactive {
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .wayang-interactive:hover {
-  transform: translateY(-8px) scale(1.03);
-  filter: drop-shadow(0 0 40px rgba(245, 158, 11, 0.8)) drop-shadow(0 0 60px rgba(251, 191, 36, 0.5));
+  transform: translateY(-6px) scale(1.02);
 }
 
-/* --- SELENDANG TIMELINE (SUTRA EMAS BERKELOK-KELOK) --- */
+/* --- SELENDANG TIMELINE (SUTRA EMAS) --- */
 @keyframes selendangDashFlow {
   from {
     stroke-dashoffset: 800;
   }
   to {
     stroke-dashoffset: 0;
-  }
-}
-
-@keyframes selendangGlowPulse {
-  0%, 100% {
-    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.4)) drop-shadow(0 0 25px rgba(99, 102, 241, 0.2));
-  }
-  50% {
-    filter: drop-shadow(0 0 24px rgba(251, 191, 36, 0.75)) drop-shadow(0 0 45px rgba(245, 158, 11, 0.45));
   }
 }
 
@@ -185,48 +146,97 @@ body {
   animation: selendangDashFlow 8s linear infinite reverse;
 }
 
-#experience-selendang-svg,
-#work-selendang-svg {
-  animation: selendangGlowPulse 4.5s ease-in-out infinite;
-}
+/* ==========================================================================
+   SISTEM KARTU ELEGAN & SUDUT BATIK (ELEGANT FANTASY CARD SYSTEM)
+   ========================================================================== */
 
-/* Elegant Batik Ornamental Corner Accents for Cards */
+/* 1. Kartu Base Surface & Border */
+.kartu-aksara,
 .batik-corner-ornament {
   position: relative;
+  background: radial-gradient(135% 135% at 50% 0%, rgba(30, 27, 75, 0.6) 0%, rgba(15, 23, 42, 0.92) 55%, rgba(2, 6, 23, 0.98) 100%) !important;
+  border: 1px solid rgba(245, 158, 11, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), inset 0 0 20px rgba(245, 158, 11, 0.04) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease !important;
+  border-radius: 4px;
+  will-change: transform;
 }
 
+.kartu-aksara:hover,
+.batik-corner-ornament:hover {
+  border-color: rgba(245, 158, 11, 0.8) !important;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(245, 158, 11, 0.25), inset 0 0 25px rgba(245, 158, 11, 0.09) !important;
+  transform: translateY(-4px);
+}
+
+/* 2. Bingkai Dalam Halus (Inner Inset Frame) */
+.kartu-aksara::before,
 .batik-corner-ornament::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 22px;
-  height: 22px;
-  border-top: 2px solid rgba(245, 158, 11, 0.45);
-  border-right: 2px solid rgba(245, 158, 11, 0.45);
+  inset: 6px;
+  border: 1px solid rgba(245, 158, 11, 0.2);
   pointer-events: none;
-  z-index: 2;
-  transition: all 0.3s ease;
+  z-index: 1;
+  transition: all 0.35s ease;
+  border-radius: 2px;
 }
 
-.batik-corner-ornament::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 22px;
-  height: 22px;
-  border-bottom: 2px solid rgba(245, 158, 11, 0.45);
-  border-left: 2px solid rgba(245, 158, 11, 0.45);
-  pointer-events: none;
-  z-index: 2;
-  transition: all 0.3s ease;
+.kartu-aksara:hover::before,
+.batik-corner-ornament:hover::before {
+  border-color: rgba(245, 158, 11, 0.55);
+  box-shadow: inset 0 0 15px rgba(245, 158, 11, 0.12);
 }
 
-.batik-corner-ornament:hover::before,
-.batik-corner-ornament:hover::after {
-  border-color: rgba(245, 158, 11, 0.85);
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+/* ==========================================================================
+   MODAL DIALOG STYLING (TANPA BINGKAI DALAM YANG MENABRAK KONTEN)
+   ========================================================================== */
+.modal-card-fantasy {
+  position: relative;
+  background: radial-gradient(135% 135% at 50% 0%, rgba(30, 27, 75, 0.75) 0%, rgba(15, 23, 42, 0.96) 55%, rgba(2, 6, 23, 0.99) 100%) !important;
+  border: 2px solid rgba(245, 158, 11, 0.5) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(245, 158, 11, 0.2) !important;
+  border-radius: 4px;
+  transform: none !important;
+  will-change: auto !important;
+}
+
+/* Pastikan TIDAK ADA pseudo-element ::before / ::after yang memotong isi konten scrollable */
+.modal-card-fantasy::before,
+.modal-card-fantasy::after,
+#project-modal .kartu-aksara::before,
+#cert-modal .kartu-aksara::before,
+#cv-modal .kartu-aksara::before,
+#lightbox-modal .kartu-aksara::before {
+  content: none !important;
+  display: none !important;
+}
+
+.modal-card-fantasy:hover,
+#project-modal .kartu-aksara:hover,
+#cert-modal .kartu-aksara:hover,
+#cv-modal .kartu-aksara:hover {
+  transform: none !important;
+}
+
+/* Custom Sleek Amber Scrollbar untuk Modal Scrollable */
+.modal-card-fantasy::-webkit-scrollbar,
+#project-modal > div::-webkit-scrollbar {
+  width: 7px;
+}
+.modal-card-fantasy::-webkit-scrollbar-track,
+#project-modal > div::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 4px;
+}
+.modal-card-fantasy::-webkit-scrollbar-thumb,
+#project-modal > div::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.45);
+  border-radius: 4px;
+}
+.modal-card-fantasy::-webkit-scrollbar-thumb:hover,
+#project-modal > div::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.8);
 }
 
 /* Cakra Mandala Slow Spin */
@@ -243,4 +253,38 @@ body {
   animation: spinCounterClockwise 50s linear infinite;
 }
 
+/* ==========================================================================
+   GSAP HARDWARE ACCELERATION & ANIMATION STYLING
+   ========================================================================== */
+.gsap-gpu {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
 
+/* Milestone Node Pulse on Active */
+@keyframes nodePulseWave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.8), 0 0 15px rgba(245, 158, 11, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(245, 158, 11, 0), 0 0 30px rgba(251, 191, 36, 0.8);
+    transform: scale(1.25);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0), 0 0 15px rgba(245, 158, 11, 0.5);
+    transform: scale(1);
+  }
+}
+
+.node-pulse-active {
+  animation: nodePulseWave 1.2s ease-out;
+}
+
+#certs-grid,
+#projects-grid,
+#models-grid,
+#education-experience-container {
+  perspective: 1200px;
+}

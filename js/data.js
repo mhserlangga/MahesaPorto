@@ -314,6 +314,29 @@ const projectData = [
     tech: ['Adobe Premiere Pro', 'CapCut', 'Sound Design', 'Video Effects', 'YouTube Production'],
     demoUrl: 'https://www.youtube.com/@nontonlagichannel2102',
     demoText: 'Buka Kanal YouTube'
+  },
+  { 
+    id: 8, 
+    title: 'Motion Graphic Intro — Sekeping', 
+    category: 'Multimedia', 
+    image: 'assets/sekeping/IntroFix.gif', 
+    desc: 'Pembuatan animasi motion graphics untuk intro resmi kanal YouTube Sekeping menggunakan Affinity Designer dan Cavalry dalam format GIF looping.', 
+    fullDesc: 'Proyek motion graphic bumper intro untuk kanal YouTube Sekeping. Berfokus pada perancangan aset grafis vektor presisi dan tipografi modern menggunakan Affinity Designer, yang kemudian dianimasikan secara prosedural dan dinamis di software Cavalry. Menghasilkan animasi intro berkualitas Full HD (1920×1080) dengan pergerakan bentuk geometris tajam, transisi dinamis, serta siklus perulangan (seamless looping) yang mulus.',
+    features: [
+      'Perancangan aset grafis vektor dan tipografi logo presisi di Affinity Designer',
+      'Animasi bentuk prosedural, timing dinamis, dan transisi gerak menggunakan Cavalry',
+      'Pembuatan bumper intro kanal YouTube dengan visual modern dan berenergi',
+      'Format animasi GIF Full HD (1920×1080) dengan siklus perulangan mulus (seamless continuous loop)'
+    ],
+    screenshots: [
+      {
+        url: 'assets/sekeping/IntroFix.gif',
+        caption: 'Animasi Seamless Looping Motion Graphic Intro Sekeping (Full HD)'
+      }
+    ],
+    tech: ['Cavalry', 'Affinity Designer', 'Motion Graphics', '2D Animation', 'Looping GIF'],
+    demoUrl: 'assets/sekeping/IntroFix.gif',
+    demoText: 'Lihat Animasi Full HD'
   }
 ];
 

@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
               ${item.images.map(img => `
                 <div onclick="openLightbox('${img}', '${item.title} - ${item.company}')" class="relative h-36 md:h-44 rounded-sm overflow-hidden border border-slate-700/60 hover:border-amber-500/80 hover:shadow-[0_0_20px_rgba(245,158,11,0.25)] transition-all duration-300 cursor-pointer group/img">
                   <div class="absolute inset-0 bg-indigo-950/30 mix-blend-overlay z-10 group-hover/img:bg-transparent transition-colors duration-500"></div>
-                  <img src="${img}" alt="Dokumentasi" class="w-full h-full object-cover group-hover/img:scale-110 transition duration-700 opacity-70 group-hover/img:opacity-100" />
+                  <img src="${img}" alt="Dokumentasi" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover/img:scale-110 transition duration-700 opacity-70 group-hover/img:opacity-100" />
                 </div>
               `).join('')}
             </div>
@@ -88,34 +88,36 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
             </div>
             
-            <div class="bg-slate-900/50 p-6 md:p-8 rounded-sm border border-slate-800 backdrop-blur-sm hover:border-amber-500/50 hover:shadow-[0_8px_30px_rgba(245,158,11,0.18)] transition-all duration-300 batik-corner-ornament">
-              <div class="flex flex-col md:flex-row md:items-start justify-between mb-4 gap-4">
+            <div class="kartu-aksara p-6 md:p-8 rounded-sm">
+              <div class="flex flex-col md:flex-row md:items-start justify-between mb-4 gap-4 relative z-10">
                 <div>
-                  <h4 class="text-xl md:text-2xl font-bold text-slate-100 font-serif-cinzel group-hover:text-amber-200 transition-colors mb-2">${item.title}</h4>
-                  <div>
+                  <div class="flex items-center gap-2 mb-2">
                     <span class="inline-block text-[10px] uppercase tracking-wider font-bold px-2.5 py-0.5 rounded-sm border ${badgeStyle}">${item.type}</span>
                   </div>
+                  <h4 class="text-xl md:text-2xl font-bold text-slate-100 font-serif-cinzel group-hover:text-amber-200 transition-colors mb-1">${item.title}</h4>
                 </div>
                 <div class="shrink-0 text-slate-400 bg-slate-950 px-3 py-1 border border-slate-800 text-sm tracking-wider font-medium font-serif-cinzel self-start">${item.period}</div>
               </div>
 
-              <div class="text-amber-500/90 font-bold mb-4 text-sm md:text-base tracking-wide flex items-center gap-2">
+              <div class="text-amber-500/90 font-bold mb-4 text-sm md:text-base tracking-wide flex items-center gap-2 relative z-10">
                 <span>✦ ${item.company}</span>
               </div>
               
-              <p class="text-slate-300 leading-relaxed text-justify md:text-left bg-slate-950/40 p-4 border-l-2 border-slate-800 group-hover:border-amber-500/50 transition-colors">
+              <p class="text-slate-300 leading-relaxed text-justify md:text-left bg-slate-950/40 p-4 border-l-2 border-amber-500/40 group-hover:border-amber-400 transition-colors relative z-10">
                 "${item.desc}"
               </p>
 
-              ${skillsHtml}
-              ${imagesHtml}
+              <div class="relative z-10">
+                ${skillsHtml}
+                ${imagesHtml}
+              </div>
             </div>
           </div>
         `;
       }).join('');
     }
 
-    // 2B. Render Bagian Pendidikan, Bootcamp & Pelatihan (Tanpa Garis Timeline)
+    // 2B. Render Bagian Pendidikan, Bootcamp & Pelatihan (Tanpa Garis Timeline - Kartu Aksara)
     if (eduExpContainer && typeof educationTrainingData !== 'undefined') {
       eduExpContainer.innerHTML = educationTrainingData.map((item, idx) => {
         let badgeStyle = "bg-indigo-500/10 text-indigo-400 border-indigo-500/30";
@@ -134,10 +136,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const colSpanClass = idx === 0 ? 'md:col-span-2' : '';
 
         return `
-          <div class="${colSpanClass} bg-slate-900/50 p-6 md:p-7 rounded-sm border border-slate-800 backdrop-blur-sm hover:border-indigo-500/50 hover:shadow-[0_8px_30px_rgba(99,102,241,0.15)] transition-all duration-300 batik-corner-ornament flex flex-col justify-between group animate-fadeIn">
-            <div>
+          <div class="${colSpanClass} kartu-aksara p-6 md:p-7 rounded-sm flex flex-col justify-between group animate-fadeIn">
+            <div class="relative z-10">
               <div class="flex flex-wrap items-start justify-between mb-3 gap-2">
-                <span class="inline-block text-[10px] uppercase tracking-wider font-bold px-2.5 py-0.5 rounded-sm border ${badgeStyle}">${item.type}</span>
+                <div class="flex items-center gap-2">
+                  <span class="inline-block text-[10px] uppercase tracking-wider font-bold px-2.5 py-0.5 rounded-sm border ${badgeStyle}">${item.type}</span>
+                </div>
                 <span class="text-xs text-slate-400 bg-slate-950 px-2.5 py-1 border border-slate-800 font-serif-cinzel">${item.period}</span>
               </div>
               <h4 class="text-lg md:text-xl font-bold text-slate-100 font-serif-cinzel group-hover:text-amber-200 transition-colors mb-2">${item.title}</h4>
@@ -148,7 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 "${item.desc}"
               </p>
             </div>
-            ${skillsHtml}
+            <div class="relative z-10">
+              ${skillsHtml}
+            </div>
           </div>
         `;
       }).join('');
@@ -239,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ro.observe(workExpContainer);
   }
 
-  // --- 3. RENDER KARYA & PROYEK (PROJECTS) ---
+  // --- 3. RENDER KARYA & PROYEK (PROJECTS) - KARTU AKSARA ---
   const projectsGrid = document.getElementById('projects-grid');
   let currentCategory = 'All';
 
@@ -251,17 +257,17 @@ document.addEventListener('DOMContentLoaded', () => {
       : projectData.filter(p => p.category === currentCategory);
 
     projectsGrid.innerHTML = list.map(project => `
-      <div class="bg-slate-900/70 rounded-sm overflow-hidden border border-slate-800 hover:border-amber-500/60 hover:-translate-y-2 hover:shadow-[0_12px_35px_rgba(245,158,11,0.2)] transition-all duration-500 group relative flex flex-col justify-between animate-fadeIn batik-corner-ornament">
+      <div class="kartu-aksara rounded-sm overflow-hidden group relative flex flex-col justify-between animate-fadeIn">
         <div>
-          <div class="h-48 overflow-hidden relative border-b border-slate-800">
+          <div class="h-48 overflow-hidden relative border-b border-amber-500/20">
             <div class="absolute inset-0 bg-indigo-900/25 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500"></div>
-            <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-75 group-hover:opacity-100" />
+            <img src="${project.image}" alt="${project.title}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-75 group-hover:opacity-100" />
             <span class="absolute top-3 right-3 z-20 bg-slate-950/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold text-amber-400 font-serif-cinzel uppercase tracking-widest border border-amber-500/40 rounded-sm shadow-md">
               ${project.category}
             </span>
           </div>
 
-          <div class="p-6">
+          <div class="p-6 relative z-10">
             <h3 class="text-xl font-bold text-slate-100 group-hover:text-amber-400 transition-colors font-serif-cinzel tracking-wide mb-2.5">
               ${project.title}
             </h3>
@@ -285,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>Lihat Detail</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
           </button>
-          <span class="text-xs text-slate-500 font-serif-cinzel">✦ #${project.id}</span>
+          <span class="text-xs text-amber-500/70 font-serif-cinzel">#${project.id}</span>
         </div>
       </div>
     `).join('');
@@ -316,9 +322,9 @@ document.addEventListener('DOMContentLoaded', () => {
       desc: 'Pengembangan aplikasi web fungsional, portal sistem informasi manajemen (SIM), dan antarmuka responsif modern yang berpusat pada pengalaman pengguna (UX) menggunakan <span class="text-amber-400 font-semibold">React</span>, <span class="text-amber-400 font-semibold">JavaScript (ES6+)</span>, <span class="text-amber-400 font-semibold">Tailwind CSS</span>, dan integrasi backend database.'
     },
     Multimedia: {
-      title: 'Karya Multimedia, Desain & Analisis Data',
-      icon: `<svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>`,
-      desc: 'Eksplorasi visualisasi data analitik, infografis statistik, perancangan antarmuka prototipe pengguna (UI/UX), dan materi multimedia digital yang dikembangkan menggunakan <span class="text-amber-400 font-semibold">Python (Pandas & Seaborn)</span>, <span class="text-amber-400 font-semibold">Figma</span>, dan tools multimedia kreatif.'
+      title: 'Karya Multimedia, Video & Motion Graphics',
+      icon: `<svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="14" height="12" x="2" y="6" rx="2"/><path d="m22 8-6 4 6 4V8Z"/></svg>`,
+      desc: 'Eksplorasi karya video editing profesional, motion graphics 2D dinamis, bumper intro kanal YouTube, serta aset animasi digital menggunakan <span class="text-amber-400 font-semibold">Cavalry</span>, <span class="text-amber-400 font-semibold">Affinity Designer</span>, dan <span class="text-amber-400 font-semibold">Adobe Premiere Pro</span>.'
     }
   };
 
@@ -335,25 +341,25 @@ document.addEventListener('DOMContentLoaded', () => {
     modelsGrid.innerHTML = models3DData.map(item => `
       <div 
         onclick="openLightbox('${item.image}', '${item.title} - ${item.category} (${item.software})')" 
-        class="group/model cursor-pointer bg-slate-900/80 border border-slate-800 rounded-sm overflow-hidden hover:border-amber-500/60 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(245,158,11,0.2)] transition-all duration-300 animate-fadeIn flex flex-col justify-between batik-corner-ornament"
+        class="group/model cursor-pointer kartu-aksara rounded-sm overflow-hidden animate-fadeIn flex flex-col justify-between"
       >
-        <div class="h-52 overflow-hidden relative border-b border-slate-800 bg-slate-950">
+        <div class="h-52 overflow-hidden relative border-b border-amber-500/20 bg-slate-950">
           <div class="absolute inset-0 bg-indigo-950/20 mix-blend-overlay z-10 group-hover/model:bg-transparent transition-colors duration-500"></div>
-          <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover/model:scale-105 transition-transform duration-700 opacity-85 group-hover/model:opacity-100" />
+          <img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover/model:scale-105 transition-transform duration-700 opacity-85 group-hover/model:opacity-100" />
           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/model:opacity-100 transition-opacity z-20 bg-slate-950/40">
             <span class="bg-slate-900/90 text-amber-300 text-xs px-3 py-1.5 border border-amber-500/50 rounded-sm font-serif-cinzel shadow-lg flex items-center gap-1.5">
-              👁 Perbesar Gambar
+              👁 Perbesar Karya
             </span>
           </div>
           <span class="absolute top-3 right-3 z-20 bg-slate-950/90 backdrop-blur-sm px-2.5 py-0.5 text-[10px] font-bold text-amber-400 font-serif-cinzel uppercase tracking-widest border border-amber-500/30 rounded-sm shadow-md">
             ${item.software}
           </span>
         </div>
-        <div class="p-4 text-center bg-slate-950/70">
+        <div class="p-4 text-center bg-slate-950/70 relative z-10">
           <h4 class="font-bold text-slate-100 font-serif-cinzel group-hover/model:text-amber-300 transition-colors text-base tracking-wide line-clamp-1">
             ${item.title}
           </h4>
-          <p class="text-xs text-slate-500 font-serif-lora mt-1 italic">
+          <p class="text-xs text-amber-400/80 font-serif-lora mt-1 italic">
             ${item.category}
           </p>
         </div>
@@ -380,6 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
         section3DModels.style.display = 'block';
         section3DModels.classList.remove('mt-16', 'pt-10', 'border-t', 'border-slate-800/80');
       }
+      if (typeof animateModelsCards === 'function') animateModelsCards();
     } else if (cat === 'All') {
       if (categoryHeader) {
         categoryHeader.style.display = 'block';
@@ -391,6 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
         section3DModels.classList.add('mt-16', 'pt-10', 'border-t', 'border-slate-800/80');
       }
       renderProjects();
+      if (typeof animateProjectsCards === 'function') animateProjectsCards();
     } else {
       // 'Game', 'Web', 'Multimedia'
       if (categoryHeader) {
@@ -402,7 +410,12 @@ document.addEventListener('DOMContentLoaded', () => {
         section3DModels.style.display = 'none';
       }
       renderProjects();
+      if (typeof animateProjectsCards === 'function') animateProjectsCards();
     }
+
+    setTimeout(() => {
+      if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+    }, 50);
   };
 
   // --- 4. RENDER SERTIFIKAT (CERTIFICATES) ---
@@ -411,10 +424,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!certsGrid || typeof certData === 'undefined') return;
 
     certsGrid.innerHTML = certData.map(cert => `
-      <div onclick="openCertModal(${cert.id})" class="group cursor-pointer bg-slate-950/90 border border-slate-800 p-2.5 rounded-sm overflow-hidden hover:border-amber-500/60 hover:shadow-[0_0_30px_rgba(245,158,11,0.15)] transition-all duration-300 animate-fadeIn batik-corner-ornament">
-        <div class="h-44 overflow-hidden bg-slate-900 relative border border-slate-800">
+      <div onclick="openCertModal(${cert.id})" class="group cursor-pointer kartu-aksara p-2.5 rounded-sm overflow-hidden animate-fadeIn">
+        <div class="h-44 overflow-hidden bg-slate-900 relative border border-slate-800 rounded-sm">
           <div class="absolute inset-0 bg-slate-900/30 z-10 group-hover:opacity-0 transition-opacity"></div>
-          <img src="${cert.image}" alt="${cert.title}" class="w-full h-full object-cover opacity-65 group-hover:opacity-100 group-hover:scale-105 transition duration-500" />
+          <img src="${cert.image}" alt="${cert.title}" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-65 group-hover:opacity-100 group-hover:scale-105 transition duration-500" />
           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20 bg-slate-950/40">
             <span class="bg-slate-900/90 text-amber-300 text-xs px-3 py-1.5 border border-amber-500/50 rounded-sm font-serif-cinzel shadow-lg">
               👁 Buka Sertifikat
@@ -422,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
         
-        <div class="p-4 text-center">
+        <div class="p-4 text-center relative z-10">
           <h4 class="font-bold text-slate-200 mb-1.5 line-clamp-1 font-serif-cinzel group-hover:text-amber-300 transition-colors">
             ${cert.title}
           </h4>
@@ -575,6 +588,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Close any active modal when pressing Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      window.closeProjectModal();
+      window.closeCertModal();
+      window.closeLightbox();
+      window.closeCvModal();
+    }
+  });
+
   // --- 6. MOBILE NAVIGATION MENU ---
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -621,4 +644,344 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+
+  // ==========================================================================
+  // 9. OPTIMIZED GSAP & SCROLLTRIGGER ANIMATION SYSTEM
+  // ==========================================================================
+
+  window.animateProjectsCards = function() {
+    const cards = document.querySelectorAll('#projects-grid > div');
+    if (!cards.length || typeof gsap === 'undefined') return;
+    gsap.fromTo(cards, 
+      { y: 20, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.05,
+        duration: 0.45,
+        ease: "power2.out",
+        overwrite: "auto",
+        clearProps: "transform,opacity"
+      }
+    );
+  };
+
+  window.animateModelsCards = function() {
+    const mCards = document.querySelectorAll('#models-grid > div');
+    if (!mCards.length || typeof gsap === 'undefined') return;
+    gsap.fromTo(mCards,
+      { y: 20, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.05,
+        duration: 0.45,
+        ease: "power2.out",
+        overwrite: "auto",
+        clearProps: "transform,opacity"
+      }
+    );
+  };
+
+  function initGsapAnimations() {
+    if (typeof gsap === 'undefined') {
+      console.warn("GSAP library not loaded.");
+      return;
+    }
+    if (typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
+    // --- 9A. HERO ENTRANCE TIMELINE ---
+    const heroTl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+    if (document.getElementById('hero-gunungan')) {
+      heroTl.from('#hero-gunungan', {
+        opacity: 0,
+        duration: 1.0,
+        clearProps: "opacity"
+      }, 0.1);
+    }
+
+    if (document.getElementById('hero-portal')) {
+      heroTl.from('#hero-portal', {
+        scale: 0.9,
+        opacity: 0,
+        duration: 0.9,
+        ease: "power2.out",
+        clearProps: "transform,opacity"
+      }, 0.2);
+    }
+
+    heroTl
+      .from('#hero-badge', { y: -15, opacity: 0, duration: 0.5, clearProps: "transform,opacity" }, 0.3)
+      .from('#hero-heading', { y: 20, opacity: 0, duration: 0.6, clearProps: "transform,opacity" }, 0.45)
+      .from('#hero-role-box', { y: 15, opacity: 0, duration: 0.5, clearProps: "transform,opacity" }, 0.6)
+      .from('#hero-desc', { y: 15, opacity: 0, duration: 0.5, clearProps: "transform,opacity" }, 0.7)
+      .from('#hero-cta', { y: 15, opacity: 0, duration: 0.5, clearProps: "transform,opacity" }, 0.8)
+      .from('#hero-socials > *', { y: 10, opacity: 0, stagger: 0.06, duration: 0.4, clearProps: "transform,opacity" }, 0.9);
+
+    // --- 9B. BATIK SECTION DIVIDERS REVEAL ---
+    document.querySelectorAll('.batik-section-divider').forEach(divider => {
+      const lineL = divider.querySelector('.divider-line-l');
+      const lineR = divider.querySelector('.divider-line-r');
+      const gem = divider.querySelector('.divider-gem');
+
+      if (lineL && lineR && gem) {
+        gsap.set(lineL, { transformOrigin: "right center" });
+        gsap.set(lineR, { transformOrigin: "left center" });
+
+        const divTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: divider,
+            start: "top 90%",
+            toggleActions: "play none none none"
+          }
+        });
+
+        divTl
+          .from(gem, { scale: 0, opacity: 0, duration: 0.45, ease: "back.out(1.5)", clearProps: "transform,opacity" })
+          .from([lineL, lineR], { scaleX: 0, opacity: 0, duration: 0.6, ease: "power2.out", clearProps: "transform,opacity" }, "-=0.2");
+      }
+    });
+
+    // --- 9C. SECTION HEADERS REVEAL ---
+    const headers = [
+      '#profile-header',
+      '#experience-header',
+      '#work-sub-header',
+      '#edu-sub-header',
+      '#project-header',
+      '#certs-header',
+      '#contact-header'
+    ];
+    headers.forEach(sel => {
+      const el = document.querySelector(sel);
+      if (el) {
+        gsap.from(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: "top 90%",
+            toggleActions: "play none none none"
+          },
+          y: 20,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          clearProps: "transform,opacity"
+        });
+      }
+    });
+
+    // --- 9D. PROFILE SECTION (CLEAN & GLITCH-FREE) ---
+    if (document.getElementById('profile-bio-card')) {
+      gsap.from('#profile-bio-card', {
+        scrollTrigger: {
+          trigger: '#profile-bio-card',
+          start: "top 88%",
+          toggleActions: "play none none none"
+        },
+        y: 25,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        clearProps: "transform,opacity"
+      });
+    }
+
+    if (document.getElementById('profile-details-grid')) {
+      gsap.from('#profile-details-grid > div', {
+        scrollTrigger: {
+          trigger: '#profile-details-grid',
+          start: "top 88%",
+          toggleActions: "play none none none"
+        },
+        y: 25,
+        opacity: 0,
+        stagger: 0.12,
+        duration: 0.6,
+        ease: "power2.out",
+        clearProps: "transform,opacity"
+      });
+    }
+
+    // --- 9E. EXPERIENCE SECTION ---
+    const workItems = document.querySelectorAll('#work-experience-container > div');
+    workItems.forEach(item => {
+      const node = item.querySelector('.work-timeline-node');
+      const card = item.querySelector('.kartu-aksara');
+
+      if (card) {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: item,
+            start: "top 88%",
+            toggleActions: "play none none none",
+            onEnter: () => {
+              if (node) {
+                node.classList.add('node-pulse-active');
+                setTimeout(() => node.classList.remove('node-pulse-active'), 1200);
+              }
+            }
+          },
+          x: 25,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          clearProps: "transform,opacity"
+        });
+      }
+
+      if (node) {
+        gsap.from(node, {
+          scrollTrigger: {
+            trigger: item,
+            start: "top 88%",
+            toggleActions: "play none none none"
+          },
+          scale: 0.5,
+          opacity: 0,
+          duration: 0.45,
+          ease: "back.out(1.5)",
+          clearProps: "transform,opacity"
+        });
+      }
+    });
+
+    // Education & Training Cards Grid
+    const eduCards = document.querySelectorAll('#education-experience-container > div');
+    if (eduCards.length) {
+      gsap.from(eduCards, {
+        scrollTrigger: {
+          trigger: '#education-experience-container',
+          start: "top 88%",
+          toggleActions: "play none none none"
+        },
+        y: 25,
+        opacity: 0,
+        stagger: 0.08,
+        duration: 0.55,
+        ease: "power2.out",
+        clearProps: "transform,opacity"
+      });
+    }
+
+    // --- 9F. PROJECTS SECTION ---
+    const projectCards = document.querySelectorAll('#projects-grid > div');
+    if (projectCards.length) {
+      gsap.from(projectCards, {
+        scrollTrigger: {
+          trigger: '#projects-grid',
+          start: "top 88%",
+          toggleActions: "play none none none"
+        },
+        y: 25,
+        opacity: 0,
+        stagger: 0.06,
+        duration: 0.55,
+        ease: "power2.out",
+        clearProps: "transform,opacity"
+      });
+    }
+
+    // 3D Models
+    const modelCards = document.querySelectorAll('#models-grid > div');
+    if (modelCards.length) {
+      gsap.from(modelCards, {
+        scrollTrigger: {
+          trigger: '#models-grid',
+          start: "top 88%",
+          toggleActions: "play none none none"
+        },
+        y: 25,
+        opacity: 0,
+        stagger: 0.06,
+        duration: 0.55,
+        ease: "power2.out",
+        clearProps: "transform,opacity"
+      });
+    }
+
+    // --- 9G. CERTIFICATES SECTION ---
+    const certCards = document.querySelectorAll('#certs-grid > div');
+    if (certCards.length) {
+      gsap.from(certCards, {
+        scrollTrigger: {
+          trigger: '#certs-grid',
+          start: "top 88%",
+          toggleActions: "play none none none"
+        },
+        y: 25,
+        opacity: 0,
+        stagger: 0.06,
+        duration: 0.55,
+        ease: "power2.out",
+        clearProps: "transform,opacity"
+      });
+    }
+
+    // --- 9H. CONTACT SECTION (NO SNAPPING, GLITCH-FREE) ---
+    if (document.getElementById('contact-gunungan-l')) {
+      gsap.from('#contact-gunungan-l', {
+        scrollTrigger: {
+          trigger: '#contact',
+          start: "top 85%",
+          toggleActions: "play none none none"
+        },
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        clearProps: "opacity"
+      });
+    }
+
+    if (document.getElementById('contact-gunungan-r')) {
+      gsap.from('#contact-gunungan-r', {
+        scrollTrigger: {
+          trigger: '#contact',
+          start: "top 85%",
+          toggleActions: "play none none none"
+        },
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        clearProps: "opacity"
+      });
+    }
+
+    if (document.getElementById('contact-status-card')) {
+      gsap.from('#contact-status-card', {
+        scrollTrigger: {
+          trigger: '#contact-status-card',
+          start: "top 90%",
+          toggleActions: "play none none none"
+        },
+        y: 15,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+        clearProps: "transform,opacity"
+      });
+    }
+
+    const contactItems = document.querySelectorAll('#contact-cards-grid > a');
+    if (contactItems.length) {
+      gsap.from(contactItems, {
+        scrollTrigger: {
+          trigger: '#contact-cards-grid',
+          start: "top 90%",
+          toggleActions: "play none none none"
+        },
+        y: 20,
+        opacity: 0,
+        stagger: 0.08,
+        duration: 0.5,
+        ease: "power2.out",
+        clearProps: "transform,opacity"
+      });
+    }
+  }
+
+  // Run GSAP initializations
+  initGsapAnimations();
 });

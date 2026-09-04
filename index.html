@@ -40,12 +40,12 @@
   <!-- BATIK NUSANTARA SUBTLE AMBIENT WATERMARK -->
   <div class="fixed inset-0 pointer-events-none z-0 bg-batik-pattern opacity-40 mix-blend-screen"></div>
 
-  <!-- MAGICAL BACKGROUND GLOW EFFECTS (CONTAINED) -->
+  <!-- MAGICAL BACKGROUND GLOW EFFECTS (CONTAINED & OPTIMIZED) -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-    <div class="absolute top-[-5%] left-[-10%] w-96 h-96 bg-purple-900/20 rounded-full blur-[120px]"></div>
-    <div class="absolute top-[35%] right-[-5%] w-[32rem] h-[32rem] bg-indigo-900/20 rounded-full blur-[150px]"></div>
-    <div class="absolute top-[70%] left-[-5%] w-96 h-96 bg-emerald-950/15 rounded-full blur-[140px]"></div>
-    <div class="absolute bottom-10 right-[15%] w-80 h-80 bg-amber-900/15 rounded-full blur-[110px]"></div>
+    <div class="absolute top-[-5%] left-[-10%] w-80 h-80 bg-purple-900/15 rounded-full blur-3xl"></div>
+    <div class="absolute top-[35%] right-[-5%] w-96 h-96 bg-indigo-900/15 rounded-full blur-3xl"></div>
+    <div class="absolute top-[70%] left-[-5%] w-80 h-80 bg-emerald-950/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 right-[15%] w-72 h-72 bg-amber-900/10 rounded-full blur-3xl"></div>
   </div>
 
   <!-- --- NAVBAR --- -->
@@ -60,7 +60,7 @@
             d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
           </path>
         </svg>
-        <span>MW.</span>
+        <span>Mahesa Erlangga.</span>
       </a>
 
       <!-- Desktop Nav Links -->
@@ -116,78 +116,82 @@
   <!-- --- SECTION 1: HERO --- -->
   <section id="hero" class="pt-36 pb-20 px-6 min-h-[95vh] flex items-center relative z-10 overflow-hidden">
     <!-- GUNUNGAN WAYANG (KAYON) MYTHICAL AMBIENT SILHOUETTE -->
-    <div class="absolute -left-10 lg:left-2 top-1/2 -translate-y-1/2 w-72 h-[26rem] md:w-96 md:h-[34rem] pointer-events-none opacity-20 lg:opacity-30 select-none animate-float-wayang z-0 flex items-center justify-center">
+    <div id="hero-gunungan"
+      class="absolute -left-10 lg:left-2 top-1/2 -translate-y-1/2 w-72 h-[26rem] md:w-96 md:h-[34rem] pointer-events-none opacity-20 lg:opacity-30 select-none animate-float-wayang z-0 flex items-center justify-center">
       <svg class="w-full h-full text-amber-400" viewBox="0 0 360 520" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="gununganGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.85"/>
-            <stop offset="50%" stop-color="#d97706" stop-opacity="0.5"/>
-            <stop offset="100%" stop-color="#4f46e5" stop-opacity="0.3"/>
+            <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.85" />
+            <stop offset="50%" stop-color="#d97706" stop-opacity="0.5" />
+            <stop offset="100%" stop-color="#4f46e5" stop-opacity="0.3" />
           </linearGradient>
           <radialGradient id="gununganAura" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
-            <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#020617" stop-opacity="0" />
           </radialGradient>
         </defs>
-        
+
         <!-- Glowing Ambient Aura -->
-        <ellipse cx="180" cy="260" rx="150" ry="220" fill="url(#gununganAura)"/>
-        
+        <ellipse cx="180" cy="260" rx="150" ry="220" fill="url(#gununganAura)" />
+
         <!-- Outer Mountain Leaf Silhouette -->
-        <path d="M180,15 C210,65 270,120 300,190 C325,250 330,310 295,380 C270,425 240,445 210,455 L210,505 L180,515 L150,505 L150,455 C120,445 90,425 65,380 C30,310 35,250 60,190 C90,120 150,65 180,15 Z" 
-              stroke="url(#gununganGoldGrad)" stroke-width="2.5" fill="#0f172a" fill-opacity="0.45"/>
-        
+        <path
+          d="M180,15 C210,65 270,120 300,190 C325,250 330,310 295,380 C270,425 240,445 210,455 L210,505 L180,515 L150,505 L150,455 C120,445 90,425 65,380 C30,310 35,250 60,190 C90,120 150,65 180,15 Z"
+          stroke="url(#gununganGoldGrad)" stroke-width="2.5" fill="#0f172a" fill-opacity="0.45" />
+
         <!-- Inner Border Filigree -->
-        <path d="M180,30 C205,75 258,125 285,190 C308,245 312,300 282,365 C260,405 232,425 205,435 L205,485 L180,495 L155,485 L155,435 C128,425 100,405 78,365 C48,300 52,245 75,190 C102,125 155,75 180,30 Z" 
-              stroke="#f59e0b" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="3 4"/>
-        
+        <path
+          d="M180,30 C205,75 258,125 285,190 C308,245 312,300 282,365 C260,405 232,425 205,435 L205,485 L180,495 L155,485 L155,435 C128,425 100,405 78,365 C48,300 52,245 75,190 C102,125 155,75 180,30 Z"
+          stroke="#f59e0b" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="3 4" />
+
         <!-- The Sacred Gate (Gapura / Rumah Wayang) -->
-        <rect x="145" y="325" width="70" height="95" rx="4" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.75" fill="#1e1b4b" fill-opacity="0.5"/>
-        <path d="M145,355 L215,355 M180,355 L180,420" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.6"/>
-        <path d="M150,335 Q180,315 210,335" stroke="#fbbf24" stroke-width="1.5" stroke-opacity="0.8"/>
+        <rect x="145" y="325" width="70" height="95" rx="4" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.75"
+          fill="#1e1b4b" fill-opacity="0.5" />
+        <path d="M145,355 L215,355 M180,355 L180,420" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.6" />
+        <path d="M150,335 Q180,315 210,335" stroke="#fbbf24" stroke-width="1.5" stroke-opacity="0.8" />
         <!-- Guardian Door Knobs -->
-        <circle cx="170" cy="385" r="3" fill="#f59e0b" fill-opacity="0.8"/>
-        <circle cx="190" cy="385" r="3" fill="#f59e0b" fill-opacity="0.8"/>
-        
+        <circle cx="170" cy="385" r="3" fill="#f59e0b" fill-opacity="0.8" />
+        <circle cx="190" cy="385" r="3" fill="#f59e0b" fill-opacity="0.8" />
+
         <!-- Central Tree of Life (Pohon Hayat / Kalpataru) Trunk -->
-        <path d="M180,325 L180,75" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.85"/>
-        
+        <path d="M180,325 L180,75" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.85" />
+
         <!-- Symmetrical Branches & Leaves -->
-        <path d="M180,105 Q215,85 245,115" stroke="#fbbf24" stroke-width="1.5" stroke-opacity="0.75"/>
-        <path d="M180,105 Q145,85 115,115" stroke="#fbbf24" stroke-width="1.5" stroke-opacity="0.75"/>
-        <circle cx="245" cy="115" r="3" fill="#fbbf24" fill-opacity="0.7"/>
-        <circle cx="115" cy="115" r="3" fill="#fbbf24" fill-opacity="0.7"/>
-        
-        <path d="M180,160 Q235,135 270,175" stroke="#f59e0b" stroke-width="1.8" stroke-opacity="0.75"/>
-        <path d="M180,160 Q125,135 90,175" stroke="#f59e0b" stroke-width="1.8" stroke-opacity="0.75"/>
-        <path d="M255,155 Q275,150 280,165" stroke="#818cf8" stroke-width="1.2" stroke-opacity="0.7"/>
-        <path d="M105,155 Q85,150 80,165" stroke="#818cf8" stroke-width="1.2" stroke-opacity="0.7"/>
-        
-        <path d="M180,215 Q250,195 285,245" stroke="#fbbf24" stroke-width="1.8" stroke-opacity="0.75"/>
-        <path d="M180,215 Q110,195 75,245" stroke="#fbbf24" stroke-width="1.8" stroke-opacity="0.75"/>
-        <circle cx="285" cy="245" r="4" stroke="#f59e0b" stroke-width="1" fill="#f59e0b" fill-opacity="0.3"/>
-        <circle cx="75" cy="245" r="4" stroke="#f59e0b" stroke-width="1" fill="#f59e0b" fill-opacity="0.3"/>
-        
-        <path d="M180,270 Q255,260 275,315" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.7"/>
-        <path d="M180,270 Q105,260 85,315" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.7"/>
-        
+        <path d="M180,105 Q215,85 245,115" stroke="#fbbf24" stroke-width="1.5" stroke-opacity="0.75" />
+        <path d="M180,105 Q145,85 115,115" stroke="#fbbf24" stroke-width="1.5" stroke-opacity="0.75" />
+        <circle cx="245" cy="115" r="3" fill="#fbbf24" fill-opacity="0.7" />
+        <circle cx="115" cy="115" r="3" fill="#fbbf24" fill-opacity="0.7" />
+
+        <path d="M180,160 Q235,135 270,175" stroke="#f59e0b" stroke-width="1.8" stroke-opacity="0.75" />
+        <path d="M180,160 Q125,135 90,175" stroke="#f59e0b" stroke-width="1.8" stroke-opacity="0.75" />
+        <path d="M255,155 Q275,150 280,165" stroke="#818cf8" stroke-width="1.2" stroke-opacity="0.7" />
+        <path d="M105,155 Q85,150 80,165" stroke="#818cf8" stroke-width="1.2" stroke-opacity="0.7" />
+
+        <path d="M180,215 Q250,195 285,245" stroke="#fbbf24" stroke-width="1.8" stroke-opacity="0.75" />
+        <path d="M180,215 Q110,195 75,245" stroke="#fbbf24" stroke-width="1.8" stroke-opacity="0.75" />
+        <circle cx="285" cy="245" r="4" stroke="#f59e0b" stroke-width="1" fill="#f59e0b" fill-opacity="0.3" />
+        <circle cx="75" cy="245" r="4" stroke="#f59e0b" stroke-width="1" fill="#f59e0b" fill-opacity="0.3" />
+
+        <path d="M180,270 Q255,260 275,315" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.7" />
+        <path d="M180,270 Q105,260 85,315" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.7" />
+
         <!-- Kala / Banaspati Protective Mask at Archway -->
         <g stroke="#fbbf24" stroke-width="1.2" stroke-opacity="0.8" fill="none">
-          <ellipse cx="180" cy="305" rx="14" ry="8"/>
-          <circle cx="174" cy="304" r="2" fill="#fbbf24"/>
-          <circle cx="186" cy="304" r="2" fill="#fbbf24"/>
-          <path d="M174,310 Q180,314 186,310"/>
+          <ellipse cx="180" cy="305" rx="14" ry="8" />
+          <circle cx="174" cy="304" r="2" fill="#fbbf24" />
+          <circle cx="186" cy="304" r="2" fill="#fbbf24" />
+          <path d="M174,310 Q180,314 186,310" />
         </g>
-        
+
         <!-- Crown Flame at Pinnacle -->
-        <path d="M180,15 L184,35 L180,45 L176,35 Z" fill="#fbbf24" fill-opacity="0.8"/>
-        <circle cx="180" cy="45" r="3" fill="#fbbf24"/>
+        <path d="M180,15 L184,35 L180,45 L176,35 Z" fill="#fbbf24" fill-opacity="0.8" />
+        <circle cx="180" cy="45" r="3" fill="#fbbf24" />
       </svg>
     </div>
 
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
       <div class="space-y-6">
-        <div
+        <div id="hero-badge"
           class="inline-flex items-center gap-2 bg-indigo-950/40 border border-indigo-500/30 px-3.5 py-1.5 rounded-sm">
           <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
@@ -196,27 +200,27 @@
           <span class="text-indigo-200 font-medium tracking-widest uppercase text-xs">Halo, perkenalkan saya</span>
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-bold leading-tight font-serif-cinzel">
+        <h1 id="hero-heading" class="text-5xl md:text-7xl font-bold leading-tight font-serif-cinzel">
           <span class="text-transparent bg-clip-text bg-gradient-to-br from-slate-100 to-slate-400">Mahesa
             Erlangga</span> <br />
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-700 drop-shadow-[0_0_15px_rgba(245,158,11,0.2)]">Willyannanda.</span>
         </h1>
 
-        <div
+        <div id="hero-role-box"
           class="h-9 text-xl md:text-2xl font-medium text-emerald-400 font-serif-cinzel tracking-wide flex items-center">
           <span id="typed-role">Game Developer</span>
           <span class="animate-pulse text-amber-500 ml-1.5 font-bold">|</span>
         </div>
 
-        <p class="text-slate-400 max-w-lg leading-relaxed text-lg text-justify md:text-left">
+        <p id="hero-desc" class="text-slate-400 max-w-lg leading-relaxed text-lg text-justify md:text-left">
           Lulusan <span class="text-slate-200 font-medium">S1 Sistem Informasi Universitas Gunadarma</span> (IPK: 3.94)
           yang berfokus pada <span class="text-amber-300 font-medium">Front-End Web Development</span> dan <span
             class="text-amber-300 font-medium">Game Development</span>, didukung pengalaman 3 tahun sebagai <span
             class="text-slate-200 font-medium">Freelance Video Editor</span>.
         </p>
 
-        <div class="flex flex-wrap gap-4 pt-4">
+        <div id="hero-cta" class="flex flex-wrap gap-4 pt-4">
           <a href="#project"
             class="group relative px-6 py-3 font-bold text-slate-900 bg-gradient-to-r from-amber-400 to-yellow-600 rounded-sm overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] flex items-center gap-2 font-serif-cinzel tracking-wider border border-amber-300">
             <span
@@ -242,7 +246,7 @@
         </div>
 
         <!-- Social Links -->
-        <div class="flex items-center gap-5 pt-6 text-slate-400">
+        <div id="hero-socials" class="flex items-center gap-5 pt-6 text-slate-400">
           <a href="https://github.com/mhserlangga" target="_blank" rel="noreferrer" title="GitHub: mhserlangga"
             class="hover:text-amber-400 hover:scale-110 transition-all duration-300 p-1.5 rounded-sm hover:bg-slate-900">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -281,35 +285,44 @@
       </div>
 
       <!-- AVATAR PORTAL -->
-      <div class="relative flex justify-center animate-float">
+      <div id="hero-portal" class="relative flex justify-center animate-float">
         <div class="w-80 h-80 sm:w-96 sm:h-96 md:w-[30rem] md:h-[30rem] relative flex items-center justify-center">
           <!-- CAKRA MANDALA BATIK KAWUNG RUNIC RING -->
-          <svg class="absolute inset-[-10px] sm:inset-[-14px] md:inset-[-20px] w-[calc(100%+20px)] sm:w-[calc(100%+28px)] md:w-[calc(100%+40px)] h-[calc(100%+20px)] sm:h-[calc(100%+28px)] md:h-[calc(100%+40px)] pointer-events-none animate-spin-mandala opacity-80 z-0" viewBox="0 0 400 400" fill="none">
+          <svg
+            class="absolute inset-[-10px] sm:inset-[-14px] md:inset-[-20px] w-[calc(100%+20px)] sm:w-[calc(100%+28px)] md:w-[calc(100%+40px)] h-[calc(100%+20px)] sm:h-[calc(100%+28px)] md:h-[calc(100%+40px)] pointer-events-none animate-spin-mandala opacity-80 z-0"
+            viewBox="0 0 400 400" fill="none">
             <!-- Concentric celestial rings with rune dash -->
-            <circle cx="200" cy="200" r="195" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4 8" stroke-opacity="0.45"/>
-            <circle cx="200" cy="200" r="186" stroke="#818cf8" stroke-width="0.75" stroke-opacity="0.3"/>
-            <circle cx="200" cy="200" r="174" stroke="#f59e0b" stroke-width="1.25" stroke-opacity="0.6"/>
+            <circle cx="200" cy="200" r="195" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4 8"
+              stroke-opacity="0.45" />
+            <circle cx="200" cy="200" r="186" stroke="#818cf8" stroke-width="0.75" stroke-opacity="0.3" />
+            <circle cx="200" cy="200" r="174" stroke="#f59e0b" stroke-width="1.25" stroke-opacity="0.6" />
             <!-- 8-Fold Kawung Petal Sigils at 45-degree intervals -->
             <g stroke="#f59e0b" stroke-width="1.2" stroke-opacity="0.75" fill="none">
               <!-- Cardinal 0, 90, 180, 270 -->
-              <path d="M200,8 C192,24 192,36 200,46 C208,36 208,24 200,8 Z" fill="#f59e0b" fill-opacity="0.12"/>
-              <circle cx="200" cy="27" r="2.5" fill="#f59e0b"/>
-              <path d="M200,392 C192,376 192,364 200,354 C208,364 208,376 200,392 Z" fill="#f59e0b" fill-opacity="0.12"/>
-              <circle cx="200" cy="373" r="2.5" fill="#f59e0b"/>
-              <path d="M392,200 C376,192 364,192 354,200 C364,208 376,208 392,200 Z" fill="#f59e0b" fill-opacity="0.12"/>
-              <circle cx="373" cy="200" r="2.5" fill="#f59e0b"/>
-              <path d="M8,200 C24,192 36,192 46,200 C36,208 24,208 8,200 Z" fill="#f59e0b" fill-opacity="0.12"/>
-              <circle cx="27" cy="200" r="2.5" fill="#f59e0b"/>
+              <path d="M200,8 C192,24 192,36 200,46 C208,36 208,24 200,8 Z" fill="#f59e0b" fill-opacity="0.12" />
+              <circle cx="200" cy="27" r="2.5" fill="#f59e0b" />
+              <path d="M200,392 C192,376 192,364 200,354 C208,364 208,376 200,392 Z" fill="#f59e0b"
+                fill-opacity="0.12" />
+              <circle cx="200" cy="373" r="2.5" fill="#f59e0b" />
+              <path d="M392,200 C376,192 364,192 354,200 C364,208 376,208 392,200 Z" fill="#f59e0b"
+                fill-opacity="0.12" />
+              <circle cx="373" cy="200" r="2.5" fill="#f59e0b" />
+              <path d="M8,200 C24,192 36,192 46,200 C36,208 24,208 8,200 Z" fill="#f59e0b" fill-opacity="0.12" />
+              <circle cx="27" cy="200" r="2.5" fill="#f59e0b" />
               <!-- Diagonal 45, 135, 225, 315 -->
               <g transform="rotate(45 200 200)">
-                <path d="M200,10 C193,25 193,35 200,43 C207,35 207,25 200,10 Z" fill="#818cf8" fill-opacity="0.15" stroke="#818cf8"/>
-                <circle cx="200" cy="26" r="2" fill="#818cf8"/>
-                <path d="M200,390 C193,375 193,365 200,357 C207,365 207,375 200,390 Z" fill="#818cf8" fill-opacity="0.15" stroke="#818cf8"/>
-                <circle cx="200" cy="374" r="2" fill="#818cf8"/>
-                <path d="M390,200 C375,193 365,193 357,200 C365,207 375,207 390,200 Z" fill="#818cf8" fill-opacity="0.15" stroke="#818cf8"/>
-                <circle cx="374" cy="200" r="2" fill="#818cf8"/>
-                <path d="M10,200 C25,193 35,193 43,200 C35,207 25,207 10,200 Z" fill="#818cf8" fill-opacity="0.15" stroke="#818cf8"/>
-                <circle cx="26" cy="200" r="2" fill="#818cf8"/>
+                <path d="M200,10 C193,25 193,35 200,43 C207,35 207,25 200,10 Z" fill="#818cf8" fill-opacity="0.15"
+                  stroke="#818cf8" />
+                <circle cx="200" cy="26" r="2" fill="#818cf8" />
+                <path d="M200,390 C193,375 193,365 200,357 C207,365 207,375 200,390 Z" fill="#818cf8"
+                  fill-opacity="0.15" stroke="#818cf8" />
+                <circle cx="200" cy="374" r="2" fill="#818cf8" />
+                <path d="M390,200 C375,193 365,193 357,200 C365,207 375,207 390,200 Z" fill="#818cf8"
+                  fill-opacity="0.15" stroke="#818cf8" />
+                <circle cx="374" cy="200" r="2" fill="#818cf8" />
+                <path d="M10,200 C25,193 35,193 43,200 C35,207 25,207 10,200 Z" fill="#818cf8" fill-opacity="0.15"
+                  stroke="#818cf8" />
+                <circle cx="26" cy="200" r="2" fill="#818cf8" />
               </g>
             </g>
           </svg>
@@ -348,24 +361,27 @@
   </section>
 
   <!-- BATIK NUSANTARA SECTION DIVIDER 1 -->
-  <div class="max-w-4xl mx-auto px-6 py-2 flex items-center justify-center gap-4 text-amber-500/60 pointer-events-none select-none relative z-10">
-    <div class="h-px bg-gradient-to-r from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
-    <div class="flex items-center gap-2 text-xs font-serif-cinzel tracking-widest text-amber-400/80">
+  <div
+    class="batik-section-divider max-w-4xl mx-auto px-6 py-2 flex items-center justify-center gap-4 text-amber-500/60 pointer-events-none select-none relative z-10">
+    <div class="divider-line-l h-px bg-gradient-to-r from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
+    <div class="divider-gem flex items-center gap-2 text-xs font-serif-cinzel tracking-widest text-amber-400/80">
       <span class="text-[10px] text-indigo-400/60">✦</span>
       <span class="text-amber-400 text-sm">❖</span>
       <span class="text-[10px] text-indigo-400/60">✦</span>
     </div>
-    <div class="h-px bg-gradient-to-l from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
+    <div class="divider-line-r h-px bg-gradient-to-l from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
   </div>
 
   <!-- --- SECTION 2: PROFILE --- -->
   <section id="profile" class="py-24 bg-slate-900/40 relative overflow-hidden z-10 border-y border-indigo-900/30">
     <!-- Distinct Batik Motif: Parang Rusak (Geometric Diagonal Flow) -->
-    <div class="absolute inset-0 bg-batik-parang opacity-65 animate-batik-diag pointer-events-none z-0"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/70 pointer-events-none z-0"></div>
+    <div class="absolute inset-0 bg-batik-parang opacity-50 pointer-events-none z-0"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/70 pointer-events-none z-0">
+    </div>
 
     <div class="max-w-6xl mx-auto px-6 relative z-10">
-      <div class="flex items-center gap-4 mb-14 justify-center md:justify-start">
+      <div id="profile-header" class="flex items-center gap-4 mb-14 justify-center md:justify-start">
         <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
@@ -378,8 +394,8 @@
       </div>
 
       <div class="flex flex-col gap-10">
-        <div class="w-full bg-slate-950/50 p-8 rounded-sm border border-slate-800/80 backdrop-blur-sm shadow-xl batik-corner-ornament">
-          <p class="text-slate-300 leading-relaxed text-lg md:text-xl text-justify md:text-left">
+        <div id="profile-bio-card" class="w-full kartu-aksara p-8 rounded-sm shadow-xl relative z-10 group">
+          <p class="text-slate-300 leading-relaxed text-lg md:text-xl text-justify md:text-left relative z-10">
             Halo! Saya adalah lulusan <span
               class="text-amber-400 font-semibold drop-shadow-[0_0_2px_rgba(245,158,11,0.8)]">S1 Sistem Informasi
               Universitas Gunadarma</span> dengan IPK 3.94 yang berfokus pada <span
@@ -393,10 +409,10 @@
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 items-stretch">
+        <div id="profile-details-grid" class="grid md:grid-cols-2 gap-8 items-stretch">
           <!-- Education Card -->
           <div
-            class="bg-slate-950/80 p-8 rounded-sm border-l-4 border-l-amber-500 border border-slate-800 shadow-[0_0_15px_rgba(0,0,0,0.5)] relative overflow-hidden group hover:border-amber-500/30 transition-colors h-full flex flex-col justify-between batik-corner-ornament">
+            class="kartu-aksara p-8 rounded-sm shadow-[0_0_15px_rgba(0,0,0,0.5)] relative overflow-hidden group h-full flex flex-col justify-between">
             <div>
               <h3 class="text-xl font-bold text-slate-100 mb-6 flex items-center gap-3 font-serif-cinzel relative z-10">
                 <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -442,9 +458,10 @@
 
           <!-- Skills Panel -->
           <div
-            class="bg-slate-950/90 p-8 rounded-sm border border-indigo-900/50 shadow-[0_0_20px_rgba(0,0,0,0.6)] relative h-full flex flex-col justify-between batik-corner-ornament">
+            class="kartu-aksara p-8 rounded-sm shadow-[0_0_20px_rgba(0,0,0,0.6)] relative h-full flex flex-col justify-between group">
             <div>
-              <h3 class="text-xl md:text-2xl font-bold mb-8 flex items-center gap-3 font-serif-cinzel text-slate-200">
+              <h3
+                class="text-xl md:text-2xl font-bold mb-8 flex items-center gap-3 font-serif-cinzel text-slate-200 relative z-10">
                 <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <rect width="16" height="16" x="4" y="4" rx="2" />
                   <rect width="6" height="6" x="9" y="9" rx="1" />
@@ -513,7 +530,7 @@
                     </div>
                     <p
                       class="text-sm text-slate-400 pl-8 group-hover/item:text-indigo-300 transition-colors leading-relaxed">
-                      Adobe Premiere Pro, CapCut, Krita, Inkscape, Figma, VS Code
+                      Cavalry, Affinity Designer, Adobe Premiere Pro, CapCut, Inkscape, Figma, VS Code
                     </p>
                   </div>
                 </div>
@@ -532,24 +549,27 @@
   </section>
 
   <!-- BATIK NUSANTARA SECTION DIVIDER 2 -->
-  <div class="max-w-4xl mx-auto px-6 py-2 flex items-center justify-center gap-4 text-amber-500/60 pointer-events-none select-none relative z-10">
-    <div class="h-px bg-gradient-to-r from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
-    <div class="flex items-center gap-2 text-xs font-serif-cinzel tracking-widest text-amber-400/80">
+  <div
+    class="batik-section-divider max-w-4xl mx-auto px-6 py-2 flex items-center justify-center gap-4 text-amber-500/60 pointer-events-none select-none relative z-10">
+    <div class="divider-line-l h-px bg-gradient-to-r from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
+    <div class="divider-gem flex items-center gap-2 text-xs font-serif-cinzel tracking-widest text-amber-400/80">
       <span class="text-[10px] text-indigo-400/60">✦</span>
       <span class="text-amber-400 text-sm">❖</span>
       <span class="text-[10px] text-indigo-400/60">✦</span>
     </div>
-    <div class="h-px bg-gradient-to-l from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
+    <div class="divider-line-r h-px bg-gradient-to-l from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
   </div>
 
   <!-- --- SECTION 3: EXPERIENCE --- -->
   <section id="experience" class="py-24 px-6 relative overflow-hidden z-10">
     <!-- Distinct Batik Motif: Mega Mendung (Drifting Celestial Clouds) -->
-    <div class="absolute inset-0 bg-batik-megamendung opacity-70 animate-batik-pan pointer-events-none z-0"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/70 pointer-events-none z-0"></div>
+    <div class="absolute inset-0 bg-batik-megamendung opacity-50 pointer-events-none z-0"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/70 pointer-events-none z-0">
+    </div>
 
     <div class="max-w-5xl mx-auto relative z-10">
-      <div class="flex items-center gap-4 mb-12 justify-center md:justify-start">
+      <div id="experience-header" class="flex items-center gap-4 mb-12 justify-center md:justify-start">
         <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4" />
@@ -563,7 +583,7 @@
 
       <!-- --- SUBSEKSI 1: PENGALAMAN KERJA (DENGAN TIMELINE SELENDANG DI SISI KIRI) --- -->
       <div class="mb-14">
-        <div class="flex items-center gap-3 mb-8">
+        <div id="work-sub-header" class="flex items-center gap-3 mb-8">
           <div class="p-2 rounded-sm bg-amber-500/10 text-amber-400 border border-amber-500/30">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <rect width="20" height="14" x="2" y="7" rx="2" />
@@ -571,17 +591,21 @@
             </svg>
           </div>
           <div>
-            <h3 class="text-xl md:text-2xl font-bold font-serif-cinzel text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500">
+            <h3
+              class="text-xl md:text-2xl font-bold font-serif-cinzel text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500">
               Pengalaman Kerja & Profesional
             </h3>
-            <p class="text-xs text-slate-400 font-serif-cinzel tracking-wider">Asisten Lab, Magang Game Dev, Freelance & Volunteer</p>
+            <p class="text-xs text-slate-400 font-serif-cinzel tracking-wider">Asisten Lab, Magang Game Dev, Freelance &
+              Volunteer</p>
           </div>
           <div class="h-px bg-gradient-to-r from-amber-500/40 to-transparent flex-1 hidden sm:block ml-4"></div>
         </div>
 
         <div class="relative" id="work-experience-wrapper">
           <!-- TIMELINE SELENDANG SUTRA (POSISI DI SISI KIRI DENGAN ANIMASI ALIRAN EMAS) -->
-          <svg id="work-selendang-svg" class="absolute left-0 top-0 bottom-0 w-10 md:w-12 h-full pointer-events-none z-0 overflow-visible" xmlns="http://www.w3.org/2000/svg">
+          <svg id="work-selendang-svg"
+            class="absolute left-0 top-0 bottom-0 w-10 md:w-12 h-full pointer-events-none z-0 overflow-visible"
+            xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="workSelendangGrad" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.95" />
@@ -601,17 +625,21 @@
             </defs>
 
             <!-- Layer 1: Ambient Silk Aura Glow -->
-            <path id="work-selendang-aura" d="" fill="none" stroke="url(#workAuraGrad)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" class="opacity-50" />
-            
+            <path id="work-selendang-aura" d="" fill="none" stroke="url(#workAuraGrad)" stroke-width="22"
+              stroke-linecap="round" stroke-linejoin="round" class="opacity-50" />
+
             <!-- Layer 2: Main Silk Ribbon Body (Selendang Sutra) -->
-            <path id="work-selendang-body" d="" fill="none" stroke="url(#workSelendangGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#workSelendangGlow)" class="opacity-90" />
-            
+            <path id="work-selendang-body" d="" fill="none" stroke="url(#workSelendangGrad)" stroke-width="8"
+              stroke-linecap="round" stroke-linejoin="round" filter="url(#workSelendangGlow)" class="opacity-90" />
+
             <!-- Layer 3: Prada Golden Trim Thread -->
-            <path id="work-selendang-edge" d="" fill="none" stroke="#fef08a" stroke-width="1.8" stroke-opacity="0.85" stroke-linecap="round" />
-            
+            <path id="work-selendang-edge" d="" fill="none" stroke="#fef08a" stroke-width="1.8" stroke-opacity="0.85"
+              stroke-linecap="round" />
+
             <!-- Layer 4: Animated Flowing Light Beam -->
-            <path id="work-selendang-light" d="" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="16 22" stroke-linecap="round" class="animate-selendang-flow opacity-95" />
-            
+            <path id="work-selendang-light" d="" fill="none" stroke="#ffffff" stroke-width="2.5"
+              stroke-dasharray="16 22" stroke-linecap="round" class="animate-selendang-flow opacity-95" />
+
             <!-- Layer 5: Golden Fringe / Tassel at Bottom -->
             <g id="work-selendang-tail" class="opacity-95"></g>
           </svg>
@@ -636,7 +664,7 @@
 
       <!-- --- SUBSEKSI 2: PENDIDIKAN & PELATIHAN (TANPA GARIS TIMELINE) --- -->
       <div>
-        <div class="flex items-center gap-3 mb-8">
+        <div id="edu-sub-header" class="flex items-center gap-3 mb-8">
           <div class="p-2 rounded-sm bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -649,7 +677,8 @@
             <h3 class="text-xl md:text-2xl font-bold font-serif-cinzel text-slate-100">
               Pendidikan, Bootcamp & Pelatihan
             </h3>
-            <p class="text-xs text-slate-400 font-serif-cinzel tracking-wider">3D Game Dev, AI Programming, Database & Full-Stack</p>
+            <p class="text-xs text-slate-400 font-serif-cinzel tracking-wider">3D Game Dev, AI Programming, Database &
+              Full-Stack</p>
           </div>
           <div class="h-px bg-gradient-to-r from-indigo-500/40 to-transparent flex-1 hidden sm:block ml-4"></div>
         </div>
@@ -663,27 +692,30 @@
   </section>
 
   <!-- BATIK NUSANTARA SECTION DIVIDER 3 -->
-  <div class="max-w-4xl mx-auto px-6 py-2 flex items-center justify-center gap-4 text-amber-500/60 pointer-events-none select-none relative z-10">
-    <div class="h-px bg-gradient-to-r from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
-    <div class="flex items-center gap-2 text-xs font-serif-cinzel tracking-widest text-amber-400/80">
+  <div
+    class="batik-section-divider max-w-4xl mx-auto px-6 py-2 flex items-center justify-center gap-4 text-amber-500/60 pointer-events-none select-none relative z-10">
+    <div class="divider-line-l h-px bg-gradient-to-r from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
+    <div class="divider-gem flex items-center gap-2 text-xs font-serif-cinzel tracking-widest text-amber-400/80">
       <span class="text-[10px] text-indigo-400/60">✦</span>
       <span class="text-amber-400 text-sm">❖</span>
       <span class="text-[10px] text-indigo-400/60">✦</span>
     </div>
-    <div class="h-px bg-gradient-to-l from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
+    <div class="divider-line-r h-px bg-gradient-to-l from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
   </div>
 
   <!-- --- SECTION 4: PROJECTS --- -->
   <section id="project" class="py-24 bg-slate-950 px-6 relative overflow-hidden z-10 border-t border-indigo-900/30">
     <!-- Distinct Batik Motif: Truntum & Sekar Jagad (Floral Geometric Constellations) -->
     <div class="absolute inset-0 bg-batik-truntum opacity-70 pointer-events-none z-0"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/75 via-transparent to-slate-950/75 pointer-events-none z-0"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-slate-950/75 via-transparent to-slate-950/75 pointer-events-none z-0">
+    </div>
 
     <div class="max-w-6xl mx-auto relative z-10">
-      <div class="text-center mb-14">
+      <div id="project-header" class="text-center mb-14">
         <h2
           class="text-3xl md:text-5xl font-bold font-serif-cinzel text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-600 mb-3">
-          ✧ Karya & Proyek Pilihan ✧
+          ✧ Karya & Proyek ✧
         </h2>
         <p class="text-slate-400 max-w-xl mx-auto text-base">
           Eksplorasi pembuatan game interaktif, aplikasi web fungsional, dan visualisasi data yang telah saya
@@ -715,7 +747,7 @@
               <polyline points="2 17 12 22 22 17" />
               <polyline points="2 12 12 17 22 12" />
             </svg>
-            <span>Koleksi Seluruh Proyek & Karya Terpilih</span>
+            <span>Koleksi Seluruh Proyek & Karya</span>
           </h3>
           <div class="h-px bg-gradient-to-r from-amber-500/40 to-transparent flex-1"></div>
         </div>
@@ -758,24 +790,28 @@
   </section>
 
   <!-- BATIK NUSANTARA SECTION DIVIDER 4 -->
-  <div class="max-w-4xl mx-auto px-6 py-2 flex items-center justify-center gap-4 text-amber-500/60 pointer-events-none select-none relative z-10">
-    <div class="h-px bg-gradient-to-r from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
-    <div class="flex items-center gap-2 text-xs font-serif-cinzel tracking-widest text-amber-400/80">
+  <div
+    class="batik-section-divider max-w-4xl mx-auto px-6 py-2 flex items-center justify-center gap-4 text-amber-500/60 pointer-events-none select-none relative z-10">
+    <div class="divider-line-l h-px bg-gradient-to-r from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
+    <div class="divider-gem flex items-center gap-2 text-xs font-serif-cinzel tracking-widest text-amber-400/80">
       <span class="text-[10px] text-indigo-400/60">✦</span>
       <span class="text-amber-400 text-sm">❖</span>
       <span class="text-[10px] text-indigo-400/60">✦</span>
     </div>
-    <div class="h-px bg-gradient-to-l from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
+    <div class="divider-line-r h-px bg-gradient-to-l from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
   </div>
 
   <!-- --- SECTION 5: CERTIFICATES --- -->
-  <section id="certificates" class="py-24 px-6 bg-slate-900/20 relative overflow-hidden z-10 border-t border-indigo-900/30">
+  <section id="certificates"
+    class="py-24 px-6 bg-slate-900/20 relative overflow-hidden z-10 border-t border-indigo-900/30">
     <!-- Distinct Batik Motif: Gurda / Garuda Wings (Royal Heraldic Elegance) -->
     <div class="absolute inset-0 bg-batik-gurda opacity-70 pointer-events-none z-0"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/70 pointer-events-none z-0"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-transparent to-slate-950/70 pointer-events-none z-0">
+    </div>
 
     <div class="max-w-6xl mx-auto relative z-10">
-      <div class="flex items-center gap-4 mb-14 justify-center md:justify-start">
+      <div id="certs-header" class="flex items-center gap-4 mb-14 justify-center md:justify-start">
         <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <circle cx="12" cy="8" r="7" />
           <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
@@ -794,81 +830,101 @@
   </section>
 
   <!-- BATIK NUSANTARA SECTION DIVIDER 5 -->
-  <div class="max-w-4xl mx-auto px-6 py-2 flex items-center justify-center gap-4 text-amber-500/60 pointer-events-none select-none relative z-10">
-    <div class="h-px bg-gradient-to-r from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
-    <div class="flex items-center gap-2 text-xs font-serif-cinzel tracking-widest text-amber-400/80">
+  <div
+    class="batik-section-divider max-w-4xl mx-auto px-6 py-2 flex items-center justify-center gap-4 text-amber-500/60 pointer-events-none select-none relative z-10">
+    <div class="divider-line-l h-px bg-gradient-to-r from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
+    <div class="divider-gem flex items-center gap-2 text-xs font-serif-cinzel tracking-widest text-amber-400/80">
       <span class="text-[10px] text-indigo-400/60">✦</span>
       <span class="text-amber-400 text-sm">❖</span>
       <span class="text-[10px] text-indigo-400/60">✦</span>
     </div>
-    <div class="h-px bg-gradient-to-l from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
+    <div class="divider-line-r h-px bg-gradient-to-l from-transparent via-amber-500/30 to-amber-500/70 flex-1"></div>
   </div>
 
   <!-- --- SECTION 6: CONTACT --- -->
   <section id="contact" class="py-14 px-6 bg-slate-950 relative overflow-hidden z-10 border-t border-indigo-900/40">
     <!-- Distinct Batik Motif: Sido Asih (Sacred Floral Vines & Continuous Growth) -->
     <div class="absolute inset-0 bg-batik-sidoasih opacity-65 pointer-events-none z-0"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/75 via-transparent to-slate-950/75 pointer-events-none z-0"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-slate-950/75 via-transparent to-slate-950/75 pointer-events-none z-0">
+    </div>
 
     <!-- FLANKING GUNUNGAN WAYANG (TANCEP KAYON - SACRED CLOSING OF SAGA) -->
     <!-- Left Gunungan Kayon -->
-    <div class="absolute -left-12 sm:left-4 md:left-12 -bottom-10 w-40 sm:w-48 md:w-60 h-auto pointer-events-none opacity-25 md:opacity-35 z-0 animate-float-wayang" style="animation-delay: 0s;">
-      <svg class="w-full h-full text-amber-400 drop-shadow-[0_0_20px_rgba(245,158,11,0.2)] transform -scale-x-100 rotate-[-5deg]" viewBox="0 0 360 520" fill="none">
+    <div id="contact-gunungan-l"
+      class="absolute -left-12 sm:left-4 md:left-12 -bottom-10 w-40 sm:w-48 md:w-60 h-auto pointer-events-none opacity-25 md:opacity-35 z-0 animate-float-wayang"
+      style="animation-delay: 0s;">
+      <svg
+        class="w-full h-full text-amber-400 drop-shadow-[0_0_20px_rgba(245,158,11,0.2)] transform -scale-x-100 rotate-[-5deg]"
+        viewBox="0 0 360 520" fill="none">
         <defs>
           <linearGradient id="gununganContactL" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.18"/>
-            <stop offset="60%" stop-color="#4f46e5" stop-opacity="0.08"/>
-            <stop offset="100%" stop-color="#020617" stop-opacity="0.25"/>
+            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.18" />
+            <stop offset="60%" stop-color="#4f46e5" stop-opacity="0.08" />
+            <stop offset="100%" stop-color="#020617" stop-opacity="0.25" />
           </linearGradient>
         </defs>
-        <path d="M180,20 C195,45 220,90 260,150 C300,210 320,280 320,360 C320,440 270,490 230,500 L130,500 C90,490 40,440 40,360 C40,280 60,210 100,150 C140,90 165,45 180,20 Z" stroke="#f59e0b" stroke-width="2.2" stroke-opacity="0.85" fill="url(#gununganContactL)"/>
-        <path d="M180,38 C192,60 214,100 248,155 C284,210 300,270 300,350 C300,425 255,475 220,485 L140,485 C105,475 60,425 60,350 C60,270 76,210 112,155 C146,100 168,60 180,38 Z" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3 4" stroke-opacity="0.55"/>
-        <path d="M180,505 L180,520" stroke="#f59e0b" stroke-width="6" stroke-linecap="round"/>
-        <path d="M130,480 L230,480 L210,335 L150,335 Z" stroke="#fbbf24" stroke-width="1.5" stroke-opacity="0.75"/>
-        <path d="M150,480 L150,375 Q180,355 210,375 L210,480" stroke="#f59e0b" stroke-width="1.8" stroke-opacity="0.8"/>
-        <path d="M180,335 L180,75" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-opacity="0.85"/>
-        <path d="M180,105 Q215,85 245,115" stroke="#fbbf24" stroke-width="1.4" stroke-opacity="0.7"/>
-        <path d="M180,105 Q145,85 115,115" stroke="#fbbf24" stroke-width="1.4" stroke-opacity="0.7"/>
-        <circle cx="245" cy="115" r="3" fill="#fbbf24" fill-opacity="0.7"/>
-        <circle cx="115" cy="115" r="3" fill="#fbbf24" fill-opacity="0.7"/>
-        <path d="M180,165 Q240,140 270,180" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.7"/>
-        <path d="M180,165 Q120,140 90,180" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.7"/>
-        <path d="M180,225 Q250,205 285,255" stroke="#fbbf24" stroke-width="1.6" stroke-opacity="0.7"/>
-        <path d="M180,225 Q110,205 75,255" stroke="#fbbf24" stroke-width="1.6" stroke-opacity="0.7"/>
-        <path d="M180,15 L184,35 L180,45 L176,35 Z" fill="#fbbf24" fill-opacity="0.8"/>
+        <path
+          d="M180,20 C195,45 220,90 260,150 C300,210 320,280 320,360 C320,440 270,490 230,500 L130,500 C90,490 40,440 40,360 C40,280 60,210 100,150 C140,90 165,45 180,20 Z"
+          stroke="#f59e0b" stroke-width="2.2" stroke-opacity="0.85" fill="url(#gununganContactL)" />
+        <path
+          d="M180,38 C192,60 214,100 248,155 C284,210 300,270 300,350 C300,425 255,475 220,485 L140,485 C105,475 60,425 60,350 C60,270 76,210 112,155 C146,100 168,60 180,38 Z"
+          stroke="#fbbf24" stroke-width="1" stroke-dasharray="3 4" stroke-opacity="0.55" />
+        <path d="M180,505 L180,520" stroke="#f59e0b" stroke-width="6" stroke-linecap="round" />
+        <path d="M130,480 L230,480 L210,335 L150,335 Z" stroke="#fbbf24" stroke-width="1.5" stroke-opacity="0.75" />
+        <path d="M150,480 L150,375 Q180,355 210,375 L210,480" stroke="#f59e0b" stroke-width="1.8"
+          stroke-opacity="0.8" />
+        <path d="M180,335 L180,75" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-opacity="0.85" />
+        <path d="M180,105 Q215,85 245,115" stroke="#fbbf24" stroke-width="1.4" stroke-opacity="0.7" />
+        <path d="M180,105 Q145,85 115,115" stroke="#fbbf24" stroke-width="1.4" stroke-opacity="0.7" />
+        <circle cx="245" cy="115" r="3" fill="#fbbf24" fill-opacity="0.7" />
+        <circle cx="115" cy="115" r="3" fill="#fbbf24" fill-opacity="0.7" />
+        <path d="M180,165 Q240,140 270,180" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.7" />
+        <path d="M180,165 Q120,140 90,180" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.7" />
+        <path d="M180,225 Q250,205 285,255" stroke="#fbbf24" stroke-width="1.6" stroke-opacity="0.7" />
+        <path d="M180,225 Q110,205 75,255" stroke="#fbbf24" stroke-width="1.6" stroke-opacity="0.7" />
+        <path d="M180,15 L184,35 L180,45 L176,35 Z" fill="#fbbf24" fill-opacity="0.8" />
       </svg>
     </div>
 
     <!-- Right Gunungan Kayon -->
-    <div class="absolute -right-12 sm:right-4 md:right-12 -bottom-10 w-40 sm:w-48 md:w-60 h-auto pointer-events-none opacity-25 md:opacity-35 z-0 animate-float-wayang" style="animation-delay: 2s;">
-      <svg class="w-full h-full text-amber-400 drop-shadow-[0_0_20px_rgba(245,158,11,0.2)] transform rotate-[5deg]" viewBox="0 0 360 520" fill="none">
+    <div id="contact-gunungan-r"
+      class="absolute -right-12 sm:right-4 md:right-12 -bottom-10 w-40 sm:w-48 md:w-60 h-auto pointer-events-none opacity-25 md:opacity-35 z-0 animate-float-wayang"
+      style="animation-delay: 2s;">
+      <svg class="w-full h-full text-amber-400 drop-shadow-[0_0_20px_rgba(245,158,11,0.2)] transform rotate-[5deg]"
+        viewBox="0 0 360 520" fill="none">
         <defs>
           <linearGradient id="gununganContactR" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.18"/>
-            <stop offset="60%" stop-color="#4f46e5" stop-opacity="0.08"/>
-            <stop offset="100%" stop-color="#020617" stop-opacity="0.25"/>
+            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.18" />
+            <stop offset="60%" stop-color="#4f46e5" stop-opacity="0.08" />
+            <stop offset="100%" stop-color="#020617" stop-opacity="0.25" />
           </linearGradient>
         </defs>
-        <path d="M180,20 C195,45 220,90 260,150 C300,210 320,280 320,360 C320,440 270,490 230,500 L130,500 C90,490 40,440 40,360 C40,280 60,210 100,150 C140,90 165,45 180,20 Z" stroke="#f59e0b" stroke-width="2.2" stroke-opacity="0.85" fill="url(#gununganContactR)"/>
-        <path d="M180,38 C192,60 214,100 248,155 C284,210 300,270 300,350 C300,425 255,475 220,485 L140,485 C105,475 60,425 60,350 C60,270 76,210 112,155 C146,100 168,60 180,38 Z" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3 4" stroke-opacity="0.55"/>
-        <path d="M180,505 L180,520" stroke="#f59e0b" stroke-width="6" stroke-linecap="round"/>
-        <path d="M130,480 L230,480 L210,335 L150,335 Z" stroke="#fbbf24" stroke-width="1.5" stroke-opacity="0.75"/>
-        <path d="M150,480 L150,375 Q180,355 210,375 L210,480" stroke="#f59e0b" stroke-width="1.8" stroke-opacity="0.8"/>
-        <path d="M180,335 L180,75" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-opacity="0.85"/>
-        <path d="M180,105 Q215,85 245,115" stroke="#fbbf24" stroke-width="1.4" stroke-opacity="0.7"/>
-        <path d="M180,105 Q145,85 115,115" stroke="#fbbf24" stroke-width="1.4" stroke-opacity="0.7"/>
-        <circle cx="245" cy="115" r="3" fill="#fbbf24" fill-opacity="0.7"/>
-        <circle cx="115" cy="115" r="3" fill="#fbbf24" fill-opacity="0.7"/>
-        <path d="M180,165 Q240,140 270,180" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.7"/>
-        <path d="M180,165 Q120,140 90,180" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.7"/>
-        <path d="M180,225 Q250,205 285,255" stroke="#fbbf24" stroke-width="1.6" stroke-opacity="0.7"/>
-        <path d="M180,225 Q110,205 75,255" stroke="#fbbf24" stroke-width="1.6" stroke-opacity="0.7"/>
-        <path d="M180,15 L184,35 L180,45 L176,35 Z" fill="#fbbf24" fill-opacity="0.8"/>
+        <path
+          d="M180,20 C195,45 220,90 260,150 C300,210 320,280 320,360 C320,440 270,490 230,500 L130,500 C90,490 40,440 40,360 C40,280 60,210 100,150 C140,90 165,45 180,20 Z"
+          stroke="#f59e0b" stroke-width="2.2" stroke-opacity="0.85" fill="url(#gununganContactR)" />
+        <path
+          d="M180,38 C192,60 214,100 248,155 C284,210 300,270 300,350 C300,425 255,475 220,485 L140,485 C105,475 60,425 60,350 C60,270 76,210 112,155 C146,100 168,60 180,38 Z"
+          stroke="#fbbf24" stroke-width="1" stroke-dasharray="3 4" stroke-opacity="0.55" />
+        <path d="M180,505 L180,520" stroke="#f59e0b" stroke-width="6" stroke-linecap="round" />
+        <path d="M130,480 L230,480 L210,335 L150,335 Z" stroke="#fbbf24" stroke-width="1.5" stroke-opacity="0.75" />
+        <path d="M150,480 L150,375 Q180,355 210,375 L210,480" stroke="#f59e0b" stroke-width="1.8"
+          stroke-opacity="0.8" />
+        <path d="M180,335 L180,75" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-opacity="0.85" />
+        <path d="M180,105 Q215,85 245,115" stroke="#fbbf24" stroke-width="1.4" stroke-opacity="0.7" />
+        <path d="M180,105 Q145,85 115,115" stroke="#fbbf24" stroke-width="1.4" stroke-opacity="0.7" />
+        <circle cx="245" cy="115" r="3" fill="#fbbf24" fill-opacity="0.7" />
+        <circle cx="115" cy="115" r="3" fill="#fbbf24" fill-opacity="0.7" />
+        <path d="M180,165 Q240,140 270,180" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.7" />
+        <path d="M180,165 Q120,140 90,180" stroke="#f59e0b" stroke-width="1.6" stroke-opacity="0.7" />
+        <path d="M180,225 Q250,205 285,255" stroke="#fbbf24" stroke-width="1.6" stroke-opacity="0.7" />
+        <path d="M180,225 Q110,205 75,255" stroke="#fbbf24" stroke-width="1.6" stroke-opacity="0.7" />
+        <path d="M180,15 L184,35 L180,45 L176,35 Z" fill="#fbbf24" fill-opacity="0.8" />
       </svg>
     </div>
 
     <div class="max-w-4xl mx-auto text-center relative z-10">
-      <div class="mb-8">
+      <div id="contact-header" class="mb-8">
         <span class="text-amber-400 font-serif-cinzel text-xs tracking-widest uppercase mb-1.5 block">
           ✧ MARI TERHUBUNG & BERKOLABORASI ✧
         </span>
@@ -883,9 +939,8 @@
       </div>
 
       <!-- Status Box -->
-      <div
-        class="bg-slate-900/70 px-5 py-3.5 rounded-sm border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.06)] mb-7 text-center max-w-2xl mx-auto batik-corner-ornament">
-        <div class="flex items-center justify-center gap-2.5 mb-1">
+      <div id="contact-status-card" class="kartu-aksara px-6 py-4 rounded-sm mb-8 text-center max-w-2xl mx-auto group">
+        <div class="flex items-center justify-center gap-2.5 mb-1.5 relative z-10">
           <span class="relative flex h-2.5 w-2.5">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
@@ -894,19 +949,19 @@
             Status Ketersediaan
           </h4>
         </div>
-        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-          Aktif mencari peluang <span class="text-white font-semibold">Magang (Internship)</span> dan proyek <span
-            class="text-white font-semibold">Freelance</span> di bidang Game Development, Web Programming, atau Data
-          Analyst.
+        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed relative z-10">
+          Aktif mencari peluang <span class="text-white font-semibold">Magang (Internship)</span> di bidang Game
+          Development, Web Programming, atau Video Editor.
         </p>
       </div>
 
       <!-- Contact Cards Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left font-serif-lora max-w-4xl mx-auto">
+      <div id="contact-cards-grid"
+        class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left font-serif-lora max-w-4xl mx-auto">
         <!-- Email -->
         <a href="mailto:maherlanggaw@gmail.com"
-          class="flex flex-col justify-between p-6 rounded-md bg-slate-900/60 border border-slate-800/90 hover:border-amber-500/60 hover:bg-slate-900/90 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(245,158,11,0.15)] transition-all duration-300 group batik-corner-ornament">
-          <div>
+          class="flex flex-col justify-between p-6 rounded-sm kartu-aksara transition-all duration-300 group">
+          <div class="relative z-10">
             <div
               class="p-3 bg-amber-500/10 text-amber-400 border border-amber-500/30 rounded-md w-fit mb-5 group-hover:scale-110 transition-transform">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -921,7 +976,7 @@
                 class="text-slate-100 font-medium group-hover:text-amber-300 transition-colors text-sm break-all leading-relaxed block">maherlanggaw@gmail.com</span>
             </div>
           </div>
-          <div class="pt-4 mt-4 border-t border-slate-800/60">
+          <div class="pt-4 mt-4 border-t border-slate-800/60 relative z-10">
             <span
               class="text-[11px] text-amber-400/80 group-hover:text-amber-300 font-serif-cinzel tracking-wider flex items-center gap-1 font-semibold">
               <span>Kirim Email</span>
@@ -935,8 +990,8 @@
 
         <!-- WhatsApp -->
         <a href="https://wa.me/6287860087009" target="_blank" rel="noreferrer"
-          class="flex flex-col justify-between p-6 rounded-md bg-slate-900/60 border border-slate-800/90 hover:border-emerald-500/60 hover:bg-slate-900/90 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(16,185,129,0.15)] transition-all duration-300 group batik-corner-ornament">
-          <div>
+          class="flex flex-col justify-between p-6 rounded-sm kartu-aksara transition-all duration-300 group">
+          <div class="relative z-10">
             <div
               class="p-3 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-md w-fit mb-5 group-hover:scale-110 transition-transform">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -952,7 +1007,7 @@
                 878-6008-7009</span>
             </div>
           </div>
-          <div class="pt-4 mt-4 border-t border-slate-800/60">
+          <div class="pt-4 mt-4 border-t border-slate-800/60 relative z-10">
             <span
               class="text-[11px] text-emerald-400/80 group-hover:text-emerald-300 font-serif-cinzel tracking-wider flex items-center gap-1 font-semibold">
               <span>Chat WhatsApp</span>
@@ -966,8 +1021,8 @@
 
         <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/mahesa-erlangga" target="_blank" rel="noreferrer"
-          class="flex flex-col justify-between p-6 rounded-md bg-slate-900/60 border border-slate-800/90 hover:border-blue-500/60 hover:bg-slate-900/90 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(59,130,246,0.15)] transition-all duration-300 group batik-corner-ornament">
-          <div>
+          class="flex flex-col justify-between p-6 rounded-sm kartu-aksara transition-all duration-300 group">
+          <div class="relative z-10">
             <div
               class="p-3 bg-blue-500/10 text-blue-400 border border-blue-500/30 rounded-md w-fit mb-5 group-hover:scale-110 transition-transform">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -982,7 +1037,7 @@
                 class="text-slate-100 font-medium group-hover:text-blue-300 transition-colors text-sm break-all leading-relaxed block">linkedin.com/in/mahesa-erlangga</span>
             </div>
           </div>
-          <div class="pt-4 mt-4 border-t border-slate-800/60">
+          <div class="pt-4 mt-4 border-t border-slate-800/60 relative z-10">
             <span
               class="text-[11px] text-blue-400/80 group-hover:text-blue-300 font-serif-cinzel tracking-wider flex items-center gap-1 font-semibold">
               <span>Kunjungi Profil</span>
@@ -1003,8 +1058,7 @@
       <p class="font-serif-cinzel tracking-widest text-amber-500/80 text-xs mb-1 flex items-center gap-2">
         <span>✧</span> DIBANGUN DENGAN PASSION, HTML, JS & TAILWINDCSS <span>✧</span>
       </p>
-      <p class="text-slate-400 text-xs">© <span id="current-year">2026</span> Mahesa Erlangga Willyannanda. Hak Cipta
-        Dilindungi.</p>
+      <p class="text-slate-400 text-xs">© <span id="current-year">2026</span> Mahesa Erlangga Willyannanda.</p>
     </div>
   </footer>
 
@@ -1012,8 +1066,7 @@
   <div id="project-modal"
     class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md animate-fadeIn"
     onclick="closeProjectModal()">
-    <div
-      class="relative bg-slate-900 border-2 border-amber-500/50 shadow-[0_0_60px_rgba(245,158,11,0.2)] max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-sm p-6 md:p-8 batik-corner-ornament"
+    <div class="relative modal-card-fantasy max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-sm p-6 md:p-8"
       onclick="event.stopPropagation()">
       <button onclick="closeProjectModal()"
         class="absolute top-4 right-4 bg-slate-800 border border-amber-500 hover:bg-amber-600 hover:text-slate-950 text-amber-400 rounded-full p-2 transition-all shadow-lg z-20 cursor-pointer"
@@ -1021,8 +1074,8 @@
         ✕
       </button>
 
-      <div class="relative h-60 md:h-72 -mx-6 -mt-6 md:-mx-8 md:-mt-8 mb-6 overflow-hidden border-b border-slate-800">
-        <img id="modal-proj-image" src="" alt="Project Banner" class="w-full h-full object-cover" />
+      <div class="relative h-60 md:h-72 -mx-6 -mt-6 md:-mx-8 md:-mt-8 mb-6 overflow-hidden border-b border-slate-800 bg-slate-950">
+        <img id="modal-proj-image" src="" alt="Project Banner" onclick="openLightbox(this.src, document.getElementById('modal-proj-title').textContent)" class="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity" title="Klik untuk memperbesar tampilan" />
         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
         <div class="absolute bottom-4 left-6 md:left-8">
           <span id="modal-proj-category"
@@ -1092,9 +1145,7 @@
   <div id="cert-modal"
     class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md animate-fadeIn"
     onclick="closeCertModal()">
-    <div
-      class="relative bg-slate-900 p-6 rounded-sm border-2 border-amber-500/50 shadow-[0_0_50px_rgba(245,158,11,0.2)] max-w-4xl w-full batik-corner-ornament"
-      onclick="event.stopPropagation()">
+    <div class="relative modal-card-fantasy p-6 rounded-sm max-w-4xl w-full" onclick="event.stopPropagation()">
       <button onclick="closeCertModal()"
         class="absolute -top-3 -right-3 bg-slate-800 border-2 border-amber-500 hover:bg-amber-600 hover:text-slate-900 text-amber-500 rounded-full p-2 transition-all shadow-lg z-10 cursor-pointer">
         ✕
@@ -1133,9 +1184,7 @@
   <div id="cv-modal"
     class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md animate-fadeIn"
     onclick="closeCvModal()">
-    <div
-      class="relative bg-slate-900 border-2 border-amber-500/50 shadow-[0_0_50px_rgba(245,158,11,0.25)] max-w-2xl w-full p-6 md:p-8 rounded-sm batik-corner-ornament"
-      onclick="event.stopPropagation()">
+    <div class="relative modal-card-fantasy max-w-2xl w-full p-6 md:p-8 rounded-sm" onclick="event.stopPropagation()">
       <button onclick="closeCvModal()"
         class="absolute top-4 right-4 bg-slate-800 border border-amber-500 hover:bg-amber-600 hover:text-slate-950 text-amber-400 rounded-full p-1.5 transition-all cursor-pointer">
         ✕
@@ -1230,10 +1279,14 @@
   </button>
 
   <!-- ================= JAVASCRIPT SCRIPTS ================= -->
+  <!-- 0. GSAP Core & ScrollTrigger Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
   <!-- 1. Data Store (Pengalaman, Proyek, Sertifikat) -->
   <script src="js/data.js"></script>
 
-  <!-- 2. Main Logic (Typing, Modals, Filter, Event Handlers) -->
+  <!-- 2. Main Logic (Typing, Modals, Filter, Event Handlers, GSAP Animations) -->
   <script src="js/main.js"></script>
 </body>
 
