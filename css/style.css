@@ -69,3 +69,178 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #f59e0b;
 }
+
+/* ==========================================================================
+   BATIK NUSANTARA × DARK FANTASY STYLING
+   ========================================================================== */
+
+/* 1. Global / Hero Watermark: Batik Kawung */
+.bg-batik-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23f59e0b' stroke-width='0.9' stroke-opacity='0.12'%3E%3Cellipse cx='40' cy='24' rx='16' ry='10'/%3E%3Cellipse cx='40' cy='56' rx='16' ry='10'/%3E%3Cellipse cx='24' cy='40' rx='10' ry='16'/%3E%3Cellipse cx='56' cy='40' rx='10' ry='16'/%3E%3Ccircle cx='40' cy='40' r='2.5' fill='%23f59e0b' fill-opacity='0.16'/%3E%3Cpolygon points='40,34 45,40 40,46 35,40' stroke='%23f59e0b' stroke-width='0.8' stroke-opacity='0.15' fill='none'/%3E%3Ccircle cx='0' cy='0' r='14' stroke-dasharray='2,2' stroke-opacity='0.08'/%3E%3Ccircle cx='80' cy='0' r='14' stroke-dasharray='2,2' stroke-opacity='0.08'/%3E%3Ccircle cx='0' cy='80' r='14' stroke-dasharray='2,2' stroke-opacity='0.08'/%3E%3Ccircle cx='80' cy='80' r='14' stroke-dasharray='2,2' stroke-opacity='0.08'/%3E%3Ccircle cx='40' cy='40' r='26' stroke='%23818cf8' stroke-width='0.6' stroke-opacity='0.09'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* 2. Section Profil: Batik Parang Rusak (Ketajaman Intelek & Daya Tahan) */
+.bg-batik-parang {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23f59e0b' stroke-width='1.1' stroke-opacity='0.16'%3E%3Cpath d='M-10,30 L30,-10' stroke-width='0.6' stroke-opacity='0.1'/%3E%3Cpath d='M10,70 L70,10' stroke-width='0.6' stroke-opacity='0.1'/%3E%3Cpath d='M30,110 L110,30' stroke-width='0.6' stroke-opacity='0.1'/%3E%3Cpath d='M0,40 Q15,30 22,18 Q26,6 18,0' stroke='%23fbbf24' stroke-width='1.2' stroke-opacity='0.22'/%3E%3Cpath d='M40,80 Q55,70 62,58 Q66,46 58,40' stroke='%23fbbf24' stroke-width='1.2' stroke-opacity='0.22'/%3E%3Cpolygon points='26,24 30,28 26,32 22,28' fill='%23f59e0b' fill-opacity='0.18'/%3E%3Cpolygon points='66,64 70,68 66,72 62,68' fill='%23f59e0b' fill-opacity='0.18'/%3E%3Ccircle cx='10' cy='50' r='2' fill='%23818cf8' fill-opacity='0.2'/%3E%3Ccircle cx='50' cy='90' r='2' fill='%23818cf8' fill-opacity='0.2'/%3E%3Ccircle cx='50' cy='10' r='2' fill='%23818cf8' fill-opacity='0.2'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* 3. Section Pengalaman: Batik Mega Mendung (Ketenangan & Awan Perjalanan Karir) */
+.bg-batik-megamendung {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='70' viewBox='0 0 120 70'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cpath d='M5,48 C20,32 40,42 60,26 C80,12 100,28 115,18' stroke='%2338bdf8' stroke-width='1.4' stroke-opacity='0.2'/%3E%3Cpath d='M8,54 C22,38 42,48 62,32 C82,18 98,34 112,24' stroke='%23818cf8' stroke-width='1.1' stroke-opacity='0.16'/%3E%3Cpath d='M12,60 C24,44 44,54 64,38 C84,24 96,40 108,30' stroke='%23f59e0b' stroke-width='0.9' stroke-opacity='0.15'/%3E%3Cpath d='M18,65 C35,72 55,62 75,68 C95,72 105,62 115,64' stroke='%2338bdf8' stroke-width='0.7' stroke-opacity='0.1' stroke-dasharray='2 3'/%3E%3Ccircle cx='60' cy='26' r='2' fill='%2338bdf8' fill-opacity='0.25'/%3E%3Ccircle cx='62' cy='32' r='1.5' fill='%23f59e0b' fill-opacity='0.25'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* 4. Section Karya: Batik Truntum & Sekar Jagad (Kreativitas & Bintang Karya) */
+.bg-batik-truntum {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 70 70'%3E%3Cg fill='none' stroke='%23f59e0b' stroke-linecap='round'%3E%3Cpolygon points='35,14 39,28 53,35 39,42 35,56 31,42 17,35 31,28' stroke='%23fbbf24' stroke-width='1.2' stroke-opacity='0.22' fill='%23f59e0b' fill-opacity='0.05'/%3E%3Ccircle cx='35' cy='35' r='3' fill='%23f59e0b' fill-opacity='0.25'/%3E%3Cpath d='M23,23 L29,29 M47,23 L41,29 M23,47 L29,41 M47,47 L41,41' stroke='%23a855f7' stroke-width='1' stroke-opacity='0.25'/%3E%3Ccircle cx='0' cy='0' r='3' fill='%23f59e0b' fill-opacity='0.2'/%3E%3Ccircle cx='70' cy='0' r='3' fill='%23f59e0b' fill-opacity='0.2'/%3E%3Ccircle cx='0' cy='70' r='3' fill='%23f59e0b' fill-opacity='0.2'/%3E%3Ccircle cx='70' cy='70' r='3' fill='%23f59e0b' fill-opacity='0.2'/%3E%3Ccircle cx='35' cy='0' r='1.5' fill='%23818cf8' fill-opacity='0.25'/%3E%3Ccircle cx='0' cy='35' r='1.5' fill='%23818cf8' fill-opacity='0.25'/%3E%3Ccircle cx='70' cy='35' r='1.5' fill='%23818cf8' fill-opacity='0.25'/%3E%3Ccircle cx='35' cy='70' r='1.5' fill='%23818cf8' fill-opacity='0.25'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* 5. Section Sertifikat: Batik Gurda (Sayap Garuda / Kehormatan Prestasi) */
+.bg-batik-gurda {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23fbbf24' stroke-linecap='round'%3E%3Cpath d='M40,12 L44,22 L40,26 L36,22 Z' fill='%23f59e0b' fill-opacity='0.25' stroke-width='0.8'/%3E%3Cpath d='M38,36 C28,22 12,18 4,28 C12,36 24,34 36,42' stroke-width='1.2' stroke-opacity='0.2'/%3E%3Cpath d='M42,36 C52,22 68,18 76,28 C68,36 56,34 44,42' stroke-width='1.2' stroke-opacity='0.2'/%3E%3Cpath d='M38,44 C26,34 16,36 8,46 C18,48 26,44 36,48' stroke-width='1' stroke-opacity='0.18'/%3E%3Cpath d='M42,44 C54,34 64,36 72,46 C62,48 54,44 44,48' stroke-width='1' stroke-opacity='0.18'/%3E%3Cpath d='M38,52 C28,48 18,50 12,62 C22,60 28,54 38,56' stroke-width='0.9' stroke-opacity='0.16' stroke='%23818cf8'/%3E%3Cpath d='M42,52 C52,48 62,50 68,62 C58,60 52,54 42,56' stroke-width='0.9' stroke-opacity='0.16' stroke='%23818cf8'/%3E%3Ccircle cx='40' cy='32' r='2' fill='%23fbbf24' fill-opacity='0.3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* 6. Section Kontak: Batik Sido Asih (Keterikatan & Relasi Kerja Sama) */
+.bg-batik-sidoasih {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23f59e0b' stroke-linecap='round'%3E%3Cpath d='M40,8 C22,8 10,24 10,40 C10,56 25,66 40,76 C55,66 70,56 70,40 C70,24 58,8 40,8 Z' stroke-width='1.2' stroke-opacity='0.2'/%3E%3Cellipse cx='40' cy='32' rx='10' ry='6' stroke='%2334d399' stroke-width='0.9' stroke-opacity='0.2'/%3E%3Cellipse cx='40' cy='48' rx='10' ry='6' stroke='%2334d399' stroke-width='0.9' stroke-opacity='0.2'/%3E%3Cellipse cx='32' cy='40' rx='6' ry='10' stroke='%2334d399' stroke-width='0.9' stroke-opacity='0.2'/%3E%3Cellipse cx='48' cy='40' rx='6' ry='10' stroke='%2334d399' stroke-width='0.9' stroke-opacity='0.2'/%3E%3Ccircle cx='40' cy='40' r='2.5' fill='%23f59e0b' fill-opacity='0.3'/%3E%3Ccircle cx='0' cy='0' r='10' stroke-dasharray='2,2' stroke-opacity='0.12'/%3E%3Ccircle cx='80' cy='0' r='10' stroke-dasharray='2,2' stroke-opacity='0.12'/%3E%3Ccircle cx='0' cy='80' r='10' stroke-dasharray='2,2' stroke-opacity='0.12'/%3E%3Ccircle cx='80' cy='80' r='10' stroke-dasharray='2,2' stroke-opacity='0.12'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* --- ANIMASI DRIFT / PAN UNTUK LATAR BELAKANG BATIK --- */
+@keyframes batikPanSlow {
+  0% { background-position: 0px 0px; }
+  100% { background-position: 120px 70px; }
+}
+
+@keyframes batikPanDiag {
+  0% { background-position: 0px 0px; }
+  100% { background-position: 80px 80px; }
+}
+
+.animate-batik-pan {
+  animation: batikPanSlow 25s linear infinite;
+}
+
+.animate-batik-diag {
+  animation: batikPanDiag 22s linear infinite;
+}
+
+/* --- WAYANG GUNUNGAN (KAYON) STYLING & ANIMATION --- */
+@keyframes floatWayangAnim {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(0.8deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes pulseGununganGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.35)) drop-shadow(0 0 35px rgba(129, 140, 248, 0.15));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(245, 158, 11, 0.65)) drop-shadow(0 0 50px rgba(245, 158, 11, 0.3));
+  }
+}
+
+.animate-float-wayang {
+  animation: floatWayangAnim 8s ease-in-out infinite, pulseGununganGlow 4s ease-in-out infinite;
+}
+
+.wayang-interactive {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wayang-interactive:hover {
+  transform: translateY(-8px) scale(1.03);
+  filter: drop-shadow(0 0 40px rgba(245, 158, 11, 0.8)) drop-shadow(0 0 60px rgba(251, 191, 36, 0.5));
+}
+
+/* --- SELENDANG TIMELINE (SUTRA EMAS BERKELOK-KELOK) --- */
+@keyframes selendangDashFlow {
+  from {
+    stroke-dashoffset: 800;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes selendangGlowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.4)) drop-shadow(0 0 25px rgba(99, 102, 241, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 24px rgba(251, 191, 36, 0.75)) drop-shadow(0 0 45px rgba(245, 158, 11, 0.45));
+  }
+}
+
+.animate-selendang-flow {
+  animation: selendangDashFlow 14s linear infinite;
+}
+
+.animate-selendang-flow-fast {
+  animation: selendangDashFlow 8s linear infinite reverse;
+}
+
+#experience-selendang-svg,
+#work-selendang-svg {
+  animation: selendangGlowPulse 4.5s ease-in-out infinite;
+}
+
+/* Elegant Batik Ornamental Corner Accents for Cards */
+.batik-corner-ornament {
+  position: relative;
+}
+
+.batik-corner-ornament::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border-top: 2px solid rgba(245, 158, 11, 0.45);
+  border-right: 2px solid rgba(245, 158, 11, 0.45);
+  pointer-events: none;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.batik-corner-ornament::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border-bottom: 2px solid rgba(245, 158, 11, 0.45);
+  border-left: 2px solid rgba(245, 158, 11, 0.45);
+  pointer-events: none;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.batik-corner-ornament:hover::before,
+.batik-corner-ornament:hover::after {
+  border-color: rgba(245, 158, 11, 0.85);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+/* Cakra Mandala Slow Spin */
+@keyframes spinCounterClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.animate-spin-mandala {
+  animation: spin 40s linear infinite;
+}
+
+.animate-spin-mandala-rev {
+  animation: spinCounterClockwise 50s linear infinite;
+}
+
+

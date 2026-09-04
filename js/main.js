@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- 1. TYPING EFFECT (HERO SECTION) ---
   const roles = [
-    "Game Developer", 
-    "Web Programmer", 
-    "Data Analyst", 
-    "Multimedia Enthusiast"
+    "Front-End Web Developer",
+    "Game Developer (Unity & Godot)", 
+    "Freelance Video Editor", 
+    "S1 Sistem Informasi (IPK: 3.94)"
   ];
   let roleIdx = 0;
   let charIdx = 0;
@@ -45,67 +45,199 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   typeLoop();
 
-  // --- 2. RENDER PENGALAMAN (EXPERIENCES) ---
-  const expContainer = document.getElementById('experience-container');
+  // --- 2. RENDER PENGALAMAN (PENGALAMAN KERJA & PENDIDIKAN) ---
+  const workExpContainer = document.getElementById('work-experience-container');
+  const eduExpContainer = document.getElementById('education-experience-container');
+
   function renderExperiences() {
-    if (!expContainer || typeof experienceData === 'undefined') return;
+    // 2A. Render Pengalaman Kerja (Dengan Timeline Selendang di Sisi Kiri)
+    if (workExpContainer && typeof workExperienceData !== 'undefined') {
+      workExpContainer.innerHTML = workExperienceData.map((item, idx) => {
+        let badgeStyle = "bg-slate-500/10 text-slate-400 border-slate-500/30";
+        if (item.type === 'Kontrak' || item.type === 'Laboratorium') badgeStyle = "bg-indigo-500/10 text-indigo-400 border-indigo-500/30 shadow-[0_0_10px_rgba(99,102,241,0.1)]";
+        if (item.type === 'Magang') badgeStyle = "bg-amber-500/10 text-amber-400 border-amber-500/30 shadow-[0_0_10px_rgba(245,158,11,0.1)]";
+        if (item.type === 'Freelance') badgeStyle = "bg-emerald-500/10 text-emerald-400 border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.1)]";
+        if (item.type === 'Volunteer' || item.type === 'Organisasi') badgeStyle = "bg-purple-500/10 text-purple-400 border-purple-500/30 shadow-[0_0_10px_rgba(168,85,247,0.1)]";
 
-    expContainer.innerHTML = experienceData.map((item) => {
-      let badgeStyle = "bg-slate-500/10 text-slate-400 border-slate-500/30";
-      if (item.type === 'Magang') badgeStyle = "bg-amber-500/10 text-amber-400 border-amber-500/30 shadow-[0_0_10px_rgba(245,158,11,0.1)]";
-      if (item.type === 'Freelance') badgeStyle = "bg-emerald-500/10 text-emerald-400 border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.1)]";
-      if (item.type === 'Organisasi') badgeStyle = "bg-purple-500/10 text-purple-400 border-purple-500/30 shadow-[0_0_10px_rgba(168,85,247,0.1)]";
-      if (item.type === 'Laboratorium') badgeStyle = "bg-indigo-500/10 text-indigo-400 border-indigo-500/30 shadow-[0_0_10px_rgba(99,102,241,0.1)]";
-
-      const skillsHtml = item.skills ? `
-        <div class="flex flex-wrap gap-2 mt-4">
-          ${item.skills.map(s => `<span class="text-[11px] font-semibold text-slate-400 bg-slate-950 border border-slate-800 px-2.5 py-0.5 rounded-sm">${s}</span>`).join('')}
-        </div>
-      ` : '';
-
-      const imagesHtml = item.images && item.images.length > 0 ? `
-        <div class="mt-5">
-          <p class="text-xs text-amber-400/80 mb-2 font-serif-cinzel">✧ Foto Dokumentasi (Klik untuk zoom):</p>
-          <div class="grid gap-4 ${item.images.length === 1 ? 'grid-cols-1 sm:w-2/3' : 'grid-cols-1 sm:grid-cols-2'}">
-            ${item.images.map(img => `
-              <div onclick="openLightbox('${img}', '${item.title} - ${item.company}')" class="relative h-36 md:h-44 rounded-sm overflow-hidden border border-slate-700/60 hover:border-amber-500/80 hover:shadow-[0_0_20px_rgba(245,158,11,0.25)] transition-all duration-300 cursor-pointer group/img">
-                <div class="absolute inset-0 bg-indigo-950/30 mix-blend-overlay z-10 group-hover/img:bg-transparent transition-colors duration-500"></div>
-                <img src="${img}" alt="Dokumentasi" class="w-full h-full object-cover group-hover/img:scale-110 transition duration-700 opacity-70 group-hover/img:opacity-100" />
-              </div>
-            `).join('')}
+        const skillsHtml = item.skills ? `
+          <div class="flex flex-wrap gap-2 mt-4">
+            ${item.skills.map(s => `<span class="text-[11px] font-semibold text-slate-400 bg-slate-950 border border-slate-800 px-2.5 py-0.5 rounded-sm">${s}</span>`).join('')}
           </div>
-        </div>
-      ` : '';
+        ` : '';
 
-      return `
-        <div class="relative group animate-fadeIn">
-          <div class="absolute -left-[29px] md:-left-[45px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-[3px] border-slate-600 group-hover:border-amber-400 group-hover:bg-amber-500 group-hover:shadow-[0_0_15px_rgba(245,158,11,0.8)] transition-all duration-300 z-10"></div>
-          
-          <div class="bg-slate-900/50 p-6 md:p-8 rounded-sm border border-slate-800 backdrop-blur-sm hover:border-amber-500/40 hover:shadow-[0_5px_25px_rgba(0,0,0,0.6)] transition-all duration-300">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4">
-              <div class="flex flex-wrap items-center gap-3">
-                <h3 class="text-xl md:text-2xl font-bold text-slate-100 font-serif-cinzel group-hover:text-amber-200 transition-colors">${item.title}</h3>
-                <span class="text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-sm border ${badgeStyle}">${item.type}</span>
-              </div>
-              <div class="shrink-0 text-slate-400 bg-slate-950 px-3 py-1 border border-slate-800 text-sm tracking-wider font-medium font-serif-cinzel">${item.period}</div>
+        const imagesHtml = item.images && item.images.length > 0 ? `
+          <div class="mt-5">
+            <div class="grid gap-4 ${item.images.length === 1 ? 'grid-cols-1 sm:w-2/3' : 'grid-cols-1 sm:grid-cols-2'}">
+              ${item.images.map(img => `
+                <div onclick="openLightbox('${img}', '${item.title} - ${item.company}')" class="relative h-36 md:h-44 rounded-sm overflow-hidden border border-slate-700/60 hover:border-amber-500/80 hover:shadow-[0_0_20px_rgba(245,158,11,0.25)] transition-all duration-300 cursor-pointer group/img">
+                  <div class="absolute inset-0 bg-indigo-950/30 mix-blend-overlay z-10 group-hover/img:bg-transparent transition-colors duration-500"></div>
+                  <img src="${img}" alt="Dokumentasi" class="w-full h-full object-cover group-hover/img:scale-110 transition duration-700 opacity-70 group-hover/img:opacity-100" />
+                </div>
+              `).join('')}
             </div>
+          </div>
+        ` : '';
 
-            <div class="text-amber-500/90 font-bold mb-4 text-sm md:text-base tracking-wide flex items-center gap-2">
-              <span>✦ ${item.company}</span>
+        return `
+          <div class="relative group animate-fadeIn">
+            <!-- Milestone Cakra Mandala Node for Selendang Anchor on Left Side -->
+            <div class="work-timeline-node absolute -left-[27px] md:-left-[43px] top-6 z-20 flex items-center justify-center" data-index="${idx}">
+              <span class="absolute w-6 h-6 rounded-full bg-amber-400/25 animate-ping pointer-events-none"></span>
+              <div class="w-6 h-6 rounded-full bg-slate-950 border-2 border-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.7)] flex items-center justify-center group-hover:scale-125 group-hover:border-amber-300 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.9)] transition-all duration-300">
+                <div class="w-2 h-2 rounded-full bg-amber-400 group-hover:bg-yellow-200"></div>
+              </div>
             </div>
             
-            <p class="text-slate-300 leading-relaxed text-justify md:text-left bg-slate-950/40 p-4 border-l-2 border-slate-800 group-hover:border-amber-500/50 transition-colors">
-              "${item.desc}"
-            </p>
+            <div class="bg-slate-900/50 p-6 md:p-8 rounded-sm border border-slate-800 backdrop-blur-sm hover:border-amber-500/50 hover:shadow-[0_8px_30px_rgba(245,158,11,0.18)] transition-all duration-300 batik-corner-ornament">
+              <div class="flex flex-col md:flex-row md:items-start justify-between mb-4 gap-4">
+                <div>
+                  <h4 class="text-xl md:text-2xl font-bold text-slate-100 font-serif-cinzel group-hover:text-amber-200 transition-colors mb-2">${item.title}</h4>
+                  <div>
+                    <span class="inline-block text-[10px] uppercase tracking-wider font-bold px-2.5 py-0.5 rounded-sm border ${badgeStyle}">${item.type}</span>
+                  </div>
+                </div>
+                <div class="shrink-0 text-slate-400 bg-slate-950 px-3 py-1 border border-slate-800 text-sm tracking-wider font-medium font-serif-cinzel self-start">${item.period}</div>
+              </div>
 
-            ${skillsHtml}
-            ${imagesHtml}
+              <div class="text-amber-500/90 font-bold mb-4 text-sm md:text-base tracking-wide flex items-center gap-2">
+                <span>✦ ${item.company}</span>
+              </div>
+              
+              <p class="text-slate-300 leading-relaxed text-justify md:text-left bg-slate-950/40 p-4 border-l-2 border-slate-800 group-hover:border-amber-500/50 transition-colors">
+                "${item.desc}"
+              </p>
+
+              ${skillsHtml}
+              ${imagesHtml}
+            </div>
           </div>
-        </div>
-      `;
-    }).join('');
+        `;
+      }).join('');
+    }
+
+    // 2B. Render Bagian Pendidikan, Bootcamp & Pelatihan (Tanpa Garis Timeline)
+    if (eduExpContainer && typeof educationTrainingData !== 'undefined') {
+      eduExpContainer.innerHTML = educationTrainingData.map((item, idx) => {
+        let badgeStyle = "bg-indigo-500/10 text-indigo-400 border-indigo-500/30";
+        if (item.type.includes('Bootcamp')) badgeStyle = "bg-amber-500/10 text-amber-400 border-amber-500/30 shadow-[0_0_10px_rgba(245,158,11,0.1)]";
+        if (item.type.includes('Game')) badgeStyle = "bg-purple-500/10 text-purple-400 border-purple-500/30 shadow-[0_0_10px_rgba(168,85,247,0.1)]";
+        if (item.type.includes('Akademik')) badgeStyle = "bg-blue-500/10 text-blue-400 border-blue-500/30 shadow-[0_0_10px_rgba(59,130,246,0.1)]";
+        if (item.type.includes('Web')) badgeStyle = "bg-emerald-500/10 text-emerald-400 border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.1)]";
+
+        const skillsHtml = item.skills ? `
+          <div class="flex flex-wrap gap-2 mt-4 pt-3 border-t border-slate-800/80">
+            ${item.skills.map(s => `<span class="text-[10px] font-medium text-slate-400 bg-slate-950 border border-slate-800 px-2 py-0.5 rounded-sm">${s}</span>`).join('')}
+          </div>
+        ` : '';
+
+        // Kartu pertama (Bootcamp 3D Game Dev - Mastered 99/100) dibuat featured span 2 kolom di layar besar
+        const colSpanClass = idx === 0 ? 'md:col-span-2' : '';
+
+        return `
+          <div class="${colSpanClass} bg-slate-900/50 p-6 md:p-7 rounded-sm border border-slate-800 backdrop-blur-sm hover:border-indigo-500/50 hover:shadow-[0_8px_30px_rgba(99,102,241,0.15)] transition-all duration-300 batik-corner-ornament flex flex-col justify-between group animate-fadeIn">
+            <div>
+              <div class="flex flex-wrap items-start justify-between mb-3 gap-2">
+                <span class="inline-block text-[10px] uppercase tracking-wider font-bold px-2.5 py-0.5 rounded-sm border ${badgeStyle}">${item.type}</span>
+                <span class="text-xs text-slate-400 bg-slate-950 px-2.5 py-1 border border-slate-800 font-serif-cinzel">${item.period}</span>
+              </div>
+              <h4 class="text-lg md:text-xl font-bold text-slate-100 font-serif-cinzel group-hover:text-amber-200 transition-colors mb-2">${item.title}</h4>
+              <div class="text-indigo-300 font-medium mb-3 text-sm flex items-center gap-1.5">
+                <span>✦ ${item.company}</span>
+              </div>
+              <p class="text-slate-300 text-sm leading-relaxed text-justify md:text-left">
+                "${item.desc}"
+              </p>
+            </div>
+            ${skillsHtml}
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Trigger update path untuk timeline selendang di sisi kiri pengalaman kerja
+    setTimeout(updateWorkSelendangPath, 50);
   }
+
+  // --- 2C. KALKULASI SELENDANG TIMELINE PENGALAMAN KERJA (SISI KIRI) ---
+  function updateWorkSelendangPath() {
+    const wrapper = document.getElementById('work-experience-wrapper');
+    if (!wrapper) return;
+
+    const wrapperRect = wrapper.getBoundingClientRect();
+    const nodes = wrapper.querySelectorAll('.work-timeline-node');
+    if (!nodes.length) return;
+
+    const points = [];
+    nodes.forEach((node, idx) => {
+      const nodeRect = node.getBoundingClientRect();
+      const x = nodeRect.left + nodeRect.width / 2 - wrapperRect.left;
+      const y = nodeRect.top + nodeRect.height / 2 - wrapperRect.top;
+      points.push({ x, y, idx });
+    });
+
+    const H = wrapperRect.height;
+    const nodeX = points[0].x;
+
+    // Titik awal selendang di paling atas
+    let d = `M ${nodeX.toFixed(1)} 0`;
+
+    // Garis selendang sutra menghubungkan setiap milestone node secara vertikal dengan kelenturan sutra halus
+    for (let i = 0; i < points.length; i++) {
+      const p = points[i];
+      if (i === 0) {
+        d += ` L ${p.x.toFixed(1)} ${p.y.toFixed(1)}`;
+      } else {
+        const prevP = points[i - 1];
+        const dy = p.y - prevP.y;
+        // Kelenturan kain selendang sutra halus di sisi kiri
+        const wave = (i % 2 === 0 ? 3.5 : -3.5);
+        const cp1x = prevP.x + wave;
+        const cp1y = prevP.y + dy * 0.35;
+        const cp2x = p.x + wave;
+        const cp2y = p.y - dy * 0.35;
+        d += ` C ${cp1x.toFixed(1)} ${cp1y.toFixed(1)} ${cp2x.toFixed(1)} ${cp2y.toFixed(1)} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`;
+      }
+    }
+
+    // Perpanjangan ke ujung selendang di bawah kartu terakhir
+    const lastP = points[points.length - 1];
+    const tailY = Math.min(H, lastP.y + 40);
+    d += ` L ${lastP.x.toFixed(1)} ${tailY.toFixed(1)}`;
+
+    // Terapkan ke elemen SVG
+    ['work-selendang-aura', 'work-selendang-body', 'work-selendang-edge', 'work-selendang-light'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.setAttribute('d', d);
+    });
+
+    // Ronce Emas / Tassels di Ujung Selendang
+    const tailGroup = document.getElementById('work-selendang-tail');
+    if (tailGroup) {
+      tailGroup.innerHTML = `
+        <circle cx="${lastP.x.toFixed(1)}" cy="${tailY.toFixed(1)}" r="3.5" fill="#f59e0b" stroke="#fbbf24" stroke-width="1.2" />
+        <line x1="${lastP.x.toFixed(1)}" y1="${tailY.toFixed(1)}" x2="${(lastP.x - 7).toFixed(1)}" y2="${(tailY + 16).toFixed(1)}" stroke="#fbbf24" stroke-width="1.2" stroke-linecap="round" />
+        <line x1="${lastP.x.toFixed(1)}" y1="${tailY.toFixed(1)}" x2="${lastP.x.toFixed(1)}" y2="${(tailY + 20).toFixed(1)}" stroke="#fef08a" stroke-width="1.5" stroke-linecap="round" />
+        <line x1="${lastP.x.toFixed(1)}" y1="${tailY.toFixed(1)}" x2="${(lastP.x + 7).toFixed(1)}" y2="${(tailY + 16).toFixed(1)}" stroke="#fbbf24" stroke-width="1.2" stroke-linecap="round" />
+      `;
+    }
+  }
+
+  // Inisialisasi dan Observer Selendang Timeline
   renderExperiences();
+  setTimeout(updateWorkSelendangPath, 100);
+  setTimeout(updateWorkSelendangPath, 500);
+  window.addEventListener('load', updateWorkSelendangPath);
+  window.addEventListener('resize', () => {
+    clearTimeout(window._selendangResizeTimer);
+    window._selendangResizeTimer = setTimeout(updateWorkSelendangPath, 80);
+  });
+
+  if (typeof ResizeObserver !== 'undefined' && workExpContainer) {
+    const ro = new ResizeObserver(() => {
+      updateWorkSelendangPath();
+    });
+    ro.observe(workExpContainer);
+  }
 
   // --- 3. RENDER KARYA & PROYEK (PROJECTS) ---
   const projectsGrid = document.getElementById('projects-grid');
@@ -119,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
       : projectData.filter(p => p.category === currentCategory);
 
     projectsGrid.innerHTML = list.map(project => `
-      <div class="bg-slate-900/70 rounded-sm overflow-hidden border border-slate-800 hover:border-amber-500/60 hover:-translate-y-2 hover:shadow-[0_12px_35px_rgba(245,158,11,0.2)] transition-all duration-500 group relative flex flex-col justify-between animate-fadeIn">
+      <div class="bg-slate-900/70 rounded-sm overflow-hidden border border-slate-800 hover:border-amber-500/60 hover:-translate-y-2 hover:shadow-[0_12px_35px_rgba(245,158,11,0.2)] transition-all duration-500 group relative flex flex-col justify-between animate-fadeIn batik-corner-ornament">
         <div>
           <div class="h-48 overflow-hidden relative border-b border-slate-800">
             <div class="absolute inset-0 bg-indigo-900/25 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -166,32 +298,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const categoryHeader = document.getElementById('category-header');
   const categoryTitle = document.getElementById('category-title');
   const categoryDesc = document.getElementById('category-desc');
-  const categoryBadge = document.getElementById('category-badge');
 
   const categoryMeta = {
     All: {
       title: 'Koleksi Seluruh Proyek & Karya Terpilih',
       icon: `<svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`,
-      desc: 'Kumpulan lengkap rekayasa perangkat lunak, game interaktif, sistem web fungsional, dan visualisasi data yang mencerminkan kapabilitas teknis serta eksplorasi lintas disiplin.',
-      badge: '✧ Klik "Lihat Detail" untuk demo & mockup'
+      desc: 'Kumpulan lengkap rekayasa perangkat lunak, game interaktif, sistem web fungsional, dan visualisasi data yang mencerminkan kapabilitas teknis serta eksplorasi lintas disiplin.'
     },
     Game: {
       title: 'Hasil Proyek Game Interaktif & Simulasi',
       icon: `<svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="6"/><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/></svg>`,
-      desc: 'Koleksi proyek game interaktif 2D dan 3D, perancangan gameplay mechanics, level design, dan implementasi logika fisika yang dikembangkan menggunakan <span class="text-amber-400 font-semibold">Unity 3D</span>, <span class="text-amber-400 font-semibold">Godot Engine</span>, serta pemrograman <span class="text-amber-400 font-semibold">C#</span> dan <span class="text-amber-400 font-semibold">GDScript</span>.',
-      badge: '✧ Klik "Lihat Detail" untuk gameplay & info'
+      desc: 'Koleksi proyek game interaktif 2D dan 3D, perancangan gameplay mechanics, level design, dan implementasi logika fisika yang dikembangkan menggunakan <span class="text-amber-400 font-semibold">Unity 3D</span>, <span class="text-amber-400 font-semibold">Godot Engine</span>, serta pemrograman <span class="text-amber-400 font-semibold">C#</span> dan <span class="text-amber-400 font-semibold">GDScript</span>.'
     },
     Web: {
       title: 'Pengembangan Website & Sistem Informasi',
       icon: `<svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
-      desc: 'Pengembangan aplikasi web fungsional, portal sistem informasi manajemen (SIM), dan antarmuka responsif modern yang berpusat pada pengalaman pengguna (UX) menggunakan <span class="text-amber-400 font-semibold">React</span>, <span class="text-amber-400 font-semibold">JavaScript (ES6+)</span>, <span class="text-amber-400 font-semibold">Tailwind CSS</span>, dan integrasi backend database.',
-      badge: '✧ Klik "Lihat Detail" untuk fitur & arsitektur'
+      desc: 'Pengembangan aplikasi web fungsional, portal sistem informasi manajemen (SIM), dan antarmuka responsif modern yang berpusat pada pengalaman pengguna (UX) menggunakan <span class="text-amber-400 font-semibold">React</span>, <span class="text-amber-400 font-semibold">JavaScript (ES6+)</span>, <span class="text-amber-400 font-semibold">Tailwind CSS</span>, dan integrasi backend database.'
     },
     Multimedia: {
       title: 'Karya Multimedia, Desain & Analisis Data',
       icon: `<svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>`,
-      desc: 'Eksplorasi visualisasi data analitik, infografis statistik, perancangan antarmuka prototipe pengguna (UI/UX), dan materi multimedia digital yang dikembangkan menggunakan <span class="text-amber-400 font-semibold">Python (Pandas & Seaborn)</span>, <span class="text-amber-400 font-semibold">Figma</span>, dan tools multimedia kreatif.',
-      badge: '✧ Klik "Lihat Detail" untuk visualisasi & data'
+      desc: 'Eksplorasi visualisasi data analitik, infografis statistik, perancangan antarmuka prototipe pengguna (UI/UX), dan materi multimedia digital yang dikembangkan menggunakan <span class="text-amber-400 font-semibold">Python (Pandas & Seaborn)</span>, <span class="text-amber-400 font-semibold">Figma</span>, dan tools multimedia kreatif.'
     }
   };
 
@@ -200,7 +327,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const meta = categoryMeta[cat];
     categoryTitle.innerHTML = `${meta.icon}<span>${meta.title}</span>`;
     categoryDesc.innerHTML = meta.desc;
-    if (categoryBadge) categoryBadge.textContent = meta.badge;
   }
 
   window.renderModels3D = function() {
@@ -209,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modelsGrid.innerHTML = models3DData.map(item => `
       <div 
         onclick="openLightbox('${item.image}', '${item.title} - ${item.category} (${item.software})')" 
-        class="group/model cursor-pointer bg-slate-900/80 border border-slate-800 rounded-sm overflow-hidden hover:border-amber-500/60 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(245,158,11,0.2)] transition-all duration-300 animate-fadeIn flex flex-col justify-between"
+        class="group/model cursor-pointer bg-slate-900/80 border border-slate-800 rounded-sm overflow-hidden hover:border-amber-500/60 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(245,158,11,0.2)] transition-all duration-300 animate-fadeIn flex flex-col justify-between batik-corner-ornament"
       >
         <div class="h-52 overflow-hidden relative border-b border-slate-800 bg-slate-950">
           <div class="absolute inset-0 bg-indigo-950/20 mix-blend-overlay z-10 group-hover/model:bg-transparent transition-colors duration-500"></div>
@@ -285,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!certsGrid || typeof certData === 'undefined') return;
 
     certsGrid.innerHTML = certData.map(cert => `
-      <div onclick="openCertModal(${cert.id})" class="group cursor-pointer bg-slate-950/90 border border-slate-800 p-2.5 rounded-sm overflow-hidden hover:border-amber-500/60 hover:shadow-[0_0_30px_rgba(245,158,11,0.15)] transition-all duration-300 animate-fadeIn">
+      <div onclick="openCertModal(${cert.id})" class="group cursor-pointer bg-slate-950/90 border border-slate-800 p-2.5 rounded-sm overflow-hidden hover:border-amber-500/60 hover:shadow-[0_0_30px_rgba(245,158,11,0.15)] transition-all duration-300 animate-fadeIn batik-corner-ornament">
         <div class="h-44 overflow-hidden bg-slate-900 relative border border-slate-800">
           <div class="absolute inset-0 bg-slate-900/30 z-10 group-hover:opacity-0 transition-opacity"></div>
           <img src="${cert.image}" alt="${cert.title}" class="w-full h-full object-cover opacity-65 group-hover:opacity-100 group-hover:scale-105 transition duration-500" />
@@ -352,6 +478,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (p.demoUrl) {
       demoBtn.href = p.demoUrl;
       demoBtn.style.display = 'inline-flex';
+      const demoSpan = demoBtn.querySelector('span');
+      if (demoSpan) {
+        demoSpan.textContent = p.demoText || 'Buka Demo / Live Preview';
+      }
     } else {
       demoBtn.style.display = 'none';
     }
