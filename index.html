@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahesa Erlangga Willyannanda | Portfolio</title>
+  <meta name="description" content="Portofolio resmi Mahesa Erlangga Willyannanda - Mahasiswa Sistem Informasi Gunadarma, Game Developer, Web Developer, dan Data Analyst." />
+  
+  <!-- Google Fonts: Cinzel & Lora -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            lora: ['Lora', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Modular Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-slate-950 text-slate-300 font-serif-lora selection:bg-amber-500/30 selection:text-amber-200 relative overflow-x-hidden min-h-screen">
+
+  <!-- MAGICAL BACKGROUND GLOW EFFECTS (CONTAINED) -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="absolute top-[-5%] left-[-10%] w-96 h-96 bg-purple-900/20 rounded-full blur-[120px]"></div>
+    <div class="absolute top-[35%] right-[-5%] w-[32rem] h-[32rem] bg-indigo-900/20 rounded-full blur-[150px]"></div>
+    <div class="absolute top-[70%] left-[-5%] w-96 h-96 bg-emerald-950/15 rounded-full blur-[140px]"></div>
+    <div class="absolute bottom-10 right-[15%] w-80 h-80 bg-amber-900/15 rounded-full blur-[110px]"></div>
+  </div>
+
+  <!-- --- NAVBAR --- -->
+  <nav class="fixed w-full bg-slate-950/85 backdrop-blur-md z-40 border-b border-indigo-900/50 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#hero" class="text-2xl font-bold font-serif-cinzel tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-600 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)] flex items-center gap-2 group">
+        <svg class="w-5 h-5 text-amber-400 group-hover:rotate-45 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path></svg>
+        <span>MW.</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wider font-serif-cinzel">
+        <a href="#hero" class="text-slate-400 hover:text-amber-300 hover:drop-shadow-[0_0_5px_rgba(252,211,77,0.8)] transition-all duration-300">Beranda</a>
+        <a href="#profile" class="text-slate-400 hover:text-amber-300 hover:drop-shadow-[0_0_5px_rgba(252,211,77,0.8)] transition-all duration-300">Profil</a>
+        <a href="#experience" class="text-slate-400 hover:text-amber-300 hover:drop-shadow-[0_0_5px_rgba(252,211,77,0.8)] transition-all duration-300">Pengalaman</a>
+        <a href="#project" class="text-slate-400 hover:text-amber-300 hover:drop-shadow-[0_0_5px_rgba(252,211,77,0.8)] transition-all duration-300">Karya</a>
+        <a href="#certificates" class="text-slate-400 hover:text-amber-300 hover:drop-shadow-[0_0_5px_rgba(252,211,77,0.8)] transition-all duration-300">Sertifikat</a>
+        <a href="#contact" class="text-slate-400 hover:text-amber-300 hover:drop-shadow-[0_0_5px_rgba(252,211,77,0.8)] transition-all duration-300">Kontak</a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-amber-400 p-2 rounded-sm border border-slate-800 bg-slate-900/60" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-950/95 border-b border-indigo-900/50 backdrop-blur-xl px-6 py-5 flex flex-col space-y-4 font-serif-cinzel text-base">
+      <a href="#hero" class="mobile-nav-link text-left text-slate-300 hover:text-amber-300 py-1">✧ Beranda</a>
+      <a href="#profile" class="mobile-nav-link text-left text-slate-300 hover:text-amber-300 py-1">✧ Profil</a>
+      <a href="#experience" class="mobile-nav-link text-left text-slate-300 hover:text-amber-300 py-1">✧ Pengalaman</a>
+      <a href="#project" class="mobile-nav-link text-left text-slate-300 hover:text-amber-300 py-1">✧ Karya & Proyek</a>
+      <a href="#certificates" class="mobile-nav-link text-left text-slate-300 hover:text-amber-300 py-1">✧ Sertifikat</a>
+      <a href="#contact" class="mobile-nav-link text-left text-slate-300 hover:text-amber-300 py-1">✧ Kontak</a>
+    </div>
+  </nav>
+
+  <!-- --- TOAST NOTIFICATION --- -->
+  <div id="toast-notif" class="fixed bottom-8 right-6 z-50 hidden bg-slate-900 border-2 border-amber-500/80 shadow-[0_0_30px_rgba(245,158,11,0.35)] px-5 py-4 rounded-sm flex items-center gap-3 animate-fadeIn text-amber-200 font-serif-cinzel">
+    <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 12 2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path></svg>
+    <span id="toast-text" class="text-sm tracking-wide">Pesan berhasil terkirim!</span>
+    <button onclick="hideToast()" class="ml-3 text-slate-400 hover:text-white">✕</button>
+  </div>
+
+  <!-- --- SECTION 1: HERO --- -->
+  <section id="hero" class="pt-36 pb-20 px-6 min-h-[95vh] flex items-center relative z-10">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-2 bg-indigo-950/40 border border-indigo-500/30 px-3.5 py-1.5 rounded-sm">
+          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          <span class="text-indigo-200 font-medium tracking-widest uppercase text-xs">Halo, perkenalkan saya</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-bold leading-tight font-serif-cinzel">
+          <span class="text-transparent bg-clip-text bg-gradient-to-br from-slate-100 to-slate-400">Mahesa Erlangga</span> <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-700 drop-shadow-[0_0_15px_rgba(245,158,11,0.2)]">Willyannanda.</span>
+        </h1>
+
+        <div class="h-9 text-xl md:text-2xl font-medium text-emerald-400 font-serif-cinzel tracking-wide flex items-center">
+          <span id="typed-role">Game Developer</span>
+          <span class="animate-pulse text-amber-500 ml-1.5 font-bold">|</span>
+        </div>
+
+        <p class="text-slate-400 max-w-lg leading-relaxed text-lg text-justify md:text-left">
+          Saya merancang, membangun, dan menganalisis sistem digital. Mengubah ide menjadi solusi interaktif yang bermakna melalui baris kode, pengolahan data mendalam, dan multimedia interaktif.
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="#project" class="group relative px-6 py-3 font-bold text-slate-900 bg-gradient-to-r from-amber-400 to-yellow-600 rounded-sm overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] flex items-center gap-2 font-serif-cinzel tracking-wider border border-amber-300">
+            <span class="absolute inset-0 w-full h-full -mt-1 rounded-sm opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 17V5a2 2 0 0 0-2-2H4"/></svg>
+            <span>Lihat Portofolio</span>
+          </a>
+          
+          <button onclick="openCvModal()" class="px-6 py-3 font-medium text-amber-400 border border-amber-500/50 rounded-sm hover:bg-amber-500/10 hover:border-amber-400 hover:shadow-[0_0_15px_rgba(245,158,11,0.2)] transition-all flex items-center gap-2 font-serif-cinzel tracking-wider cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            <span>Unduh CV</span>
+          </button>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex items-center gap-6 pt-6 text-slate-400">
+          <a href="https://github.com" target="_blank" rel="noreferrer" title="GitHub" class="hover:text-amber-400 hover:scale-110 transition-all duration-300 p-1.5 rounded-sm hover:bg-slate-900">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer" title="LinkedIn" class="hover:text-amber-400 hover:scale-110 transition-all duration-300 p-1.5 rounded-sm hover:bg-slate-900">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="mailto:mahesa.erlangga@example.com" title="Kirim Email" class="hover:text-amber-400 hover:scale-110 transition-all duration-300 p-1.5 rounded-sm hover:bg-slate-900">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+          <div class="h-4 w-px bg-slate-800"></div>
+          <div class="text-xs text-slate-500 flex items-center gap-2 font-serif-cinzel">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Open for work</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AVATAR PORTAL -->
+      <div class="relative flex justify-center animate-float">
+        <div class="w-72 h-72 md:w-[26rem] md:h-[26rem] relative flex items-center justify-center">
+          <div class="absolute inset-0 rounded-full border border-indigo-500/30 animate-[spin_25s_linear_infinite]"></div>
+          <div class="absolute inset-3 rounded-full border border-dashed border-amber-500/25 animate-[spin_18s_linear_infinite_reverse]"></div>
+          <div class="absolute inset-6 rounded-full border border-indigo-400/20"></div>
+          <div class="absolute inset-8 rounded-full bg-gradient-to-tr from-indigo-600/20 via-amber-500/10 to-purple-600/20 blur-xl"></div>
+          
+          <div class="w-64 h-64 md:w-84 md:h-84 bg-slate-900 rounded-full border-2 border-amber-500/60 shadow-[0_0_45px_rgba(245,158,11,0.25)] relative overflow-hidden flex items-center justify-center z-10 group">
+            <img 
+              src="assets/images/avatar.jpg" 
+              alt="Mahesa Erlangga Willyannanda" 
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800';"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+            <div class="absolute bottom-3 text-amber-300 font-serif-cinzel text-xs tracking-widest uppercase bg-slate-950/80 px-3 py-0.5 border border-amber-500/40 rounded-sm backdrop-blur-sm">
+              ✧ ARCH-CODER ✧
+            </div>
+          </div>
+
+          <div class="absolute top-2 right-8 w-3 h-3 bg-amber-400 rounded-full blur-[1px] animate-pulse shadow-[0_0_10px_#f59e0b]"></div>
+          <div class="absolute bottom-6 left-6 w-2.5 h-2.5 bg-indigo-400 rounded-full blur-[1px] animate-pulse delay-700 shadow-[0_0_10px_#818cf8]"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 2: PROFILE --- -->
+  <section id="profile" class="py-24 bg-slate-900/40 relative z-10 border-y border-indigo-900/30">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-4 mb-14 justify-center md:justify-start">
+        <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path></svg>
+        <h2 class="text-3xl md:text-4xl font-bold font-serif-cinzel text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-400">Tentang Saya</h2>
+        <div class="h-px bg-gradient-to-r from-amber-500/50 to-transparent flex-1 hidden md:block ml-4"></div>
+      </div>
+      
+      <div class="flex flex-col gap-10">
+        <div class="w-full bg-slate-950/50 p-8 rounded-sm border border-slate-800/80 backdrop-blur-sm shadow-xl">
+          <p class="text-slate-300 leading-relaxed text-lg md:text-xl text-justify md:text-left">
+            Halo, saya adalah mahasiswa <span class="text-amber-400 font-semibold drop-shadow-[0_0_2px_rgba(245,158,11,0.8)]">Universitas Gunadarma</span> program studi Sistem Informasi angkatan 2022. Saya memiliki gairah mendalam pada rekayasa teknologi interaktif, dengan spesialisasi utama dalam pengembangan game (khususnya mekanik 2D/3D & puzzle), rekayasa web modern, serta analisis data statistik. Saya memegang prinsip bahwa kombinasi antara logika kode yang solid dan sentuhan seni multimedia mampu melahirkan karya yang tidak hanya fungsional, namun juga menghadirkan pengalaman tak terlupakan bagi penggunanya.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8 items-stretch">
+          <!-- Education Card -->
+          <div class="bg-slate-950/80 p-8 rounded-sm border-l-4 border-l-amber-500 border border-slate-800 shadow-[0_0_15px_rgba(0,0,0,0.5)] relative overflow-hidden group hover:border-amber-500/30 transition-colors h-full flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-slate-100 mb-6 flex items-center gap-3 font-serif-cinzel relative z-10">
+                <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+                Riwayat Pendidikan
+              </h3>
+              
+              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 relative z-10">
+                <div>
+                  <h4 class="text-amber-100 font-bold text-xl tracking-wide mb-1">Universitas Gunadarma</h4>
+                  <p class="text-indigo-300 font-medium flex items-center gap-2 text-base">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    Sistem Informasi (S1)
+                  </p>
+                </div>
+                <div>
+                  <span class="text-slate-400 text-sm bg-slate-900 px-4 py-2 border border-slate-700 rounded-sm font-serif-cinzel tracking-widest shadow-inner whitespace-nowrap">
+                    2022 - 2026
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6 border-t border-slate-800/80 relative z-10 flex flex-wrap items-center justify-between gap-4">
+              <span class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/10 to-transparent border border-amber-500/30 px-5 py-2.5 text-amber-400 font-bold text-base tracking-widest font-serif-cinzel shadow-sm">
+                ✧ Indeks Prestasi Kumulatif: 3.94 ✧
+              </span>
+              <span class="text-xs text-slate-500 italic">Skala 4.00</span>
+            </div>
+          </div>
+          
+          <!-- Skills Panel -->
+          <div class="bg-slate-950/90 p-8 rounded-sm border border-indigo-900/50 shadow-[0_0_20px_rgba(0,0,0,0.6)] relative h-full flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl md:text-2xl font-bold mb-8 flex items-center gap-3 font-serif-cinzel text-slate-200">
+                <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2m0 16v2M2 15h2M2 9h2m16 6h2m-2-6h2M9 2v2m0 16v2"/></svg>
+                Keahlian & Senjata Teknologi
+              </h3>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="space-y-6">
+                  <div class="group/item">
+                    <div class="flex items-center gap-3 text-slate-300 mb-1.5">
+                      <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="6"/><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/></svg>
+                      <span class="font-semibold tracking-wide">Game Development</span>
+                    </div>
+                    <p class="text-sm text-slate-400 pl-8 group-hover/item:text-indigo-300 transition-colors">
+                      Unity 2D/3D, Godot, C#, GDScript, Physics Simulation
+                    </p>
+                  </div>
+                  
+                  <div class="group/item">
+                    <div class="flex items-center gap-3 text-slate-300 mb-1.5">
+                      <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                      <span class="font-semibold tracking-wide">Web Development</span>
+                    </div>
+                    <p class="text-sm text-slate-400 pl-8 group-hover/item:text-indigo-300 transition-colors">
+                      React.js, Next.js, Node.js, PHP, Tailwind CSS, TypeScript
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="space-y-6">
+                  <div class="group/item">
+                    <div class="flex items-center gap-3 text-slate-300 mb-1.5">
+                      <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 18 0"/></svg>
+                      <span class="font-semibold tracking-wide">Data Analysis</span>
+                    </div>
+                    <p class="text-sm text-slate-400 pl-8 group-hover/item:text-indigo-300 transition-colors">
+                      Python, Pandas, NumPy, Scikit-Learn, MySQL, PostgreSQL
+                    </p>
+                  </div>
+                  
+                  <div class="group/item">
+                    <div class="flex items-center gap-3 text-slate-300 mb-1.5">
+                      <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="14" height="12" x="2" y="6" rx="2"/><path d="m22 8-6 4 6 4V8Z"/></svg>
+                      <span class="font-semibold tracking-wide">Multimedia & Desain</span>
+                    </div>
+                    <p class="text-sm text-slate-400 pl-8 group-hover/item:text-indigo-300 transition-colors">
+                      Blender 3D, Premiere Pro, After Effects, Figma, Photoshop
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-slate-800/60 text-xs text-slate-500 font-serif-cinzel flex items-center justify-between">
+              <span>✦ STATUS: SIAP MENGHADAPI TANTANGAN BARU</span>
+              <span>LEVEL 4/4 S1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 3: EXPERIENCE --- -->
+  <section id="experience" class="py-24 px-6 relative z-10">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-4 mb-14 justify-center md:justify-start">
+        <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 17V5a2 2 0 0 0-2-2H4"/></svg>
+        <h2 class="text-3xl md:text-4xl font-bold font-serif-cinzel text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-400">Jejak Pengalaman</h2>
+        <div class="h-px bg-gradient-to-r from-amber-500/50 to-transparent flex-1 hidden md:block ml-4"></div>
+      </div>
+
+      <div class="relative">
+        <div class="absolute left-0 top-2 bottom-0 w-[2px] bg-gradient-to-b from-amber-500/80 via-indigo-600/50 to-transparent md:left-[11px]"></div>
+
+        <div class="space-y-12 md:pl-10 pl-6 relative" id="experience-container">
+          <!-- Experience items dynamically rendered from assets/js/data.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 4: PROJECTS --- -->
+  <section id="project" class="py-24 bg-slate-950 px-6 relative z-10 border-t border-indigo-900/30">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-5xl font-bold font-serif-cinzel text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-600 mb-3">
+          ✧ Karya & Proyek Pilihan ✧
+        </h2>
+        <p class="text-slate-400 max-w-xl mx-auto text-base">
+          Eksplorasi pembuatan game interaktif, aplikasi web fungsional, dan visualisasi data yang telah saya selesaikan.
+        </p>
+      </div>
+
+      <!-- Category Filters -->
+      <div class="flex flex-wrap gap-3 mb-12 justify-center" id="project-filters">
+        <button onclick="filterProjects('All')" class="filter-btn active px-6 py-2.5 text-sm font-medium transition duration-300 font-serif-cinzel tracking-widest rounded-sm border cursor-pointer bg-amber-500/15 text-amber-300 border-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.25)]">All</button>
+        <button onclick="filterProjects('Game')" class="filter-btn px-6 py-2.5 text-sm font-medium transition duration-300 font-serif-cinzel tracking-widest rounded-sm border cursor-pointer bg-slate-900/80 text-slate-400 border-slate-800 hover:border-amber-500/50 hover:text-amber-200">Game</button>
+        <button onclick="filterProjects('3D')" class="filter-btn px-6 py-2.5 text-sm font-medium transition duration-300 font-serif-cinzel tracking-widest rounded-sm border cursor-pointer bg-slate-900/80 text-slate-400 border-slate-800 hover:border-amber-500/50 hover:text-amber-200">3D</button>
+        <button onclick="filterProjects('Web')" class="filter-btn px-6 py-2.5 text-sm font-medium transition duration-300 font-serif-cinzel tracking-widest rounded-sm border cursor-pointer bg-slate-900/80 text-slate-400 border-slate-800 hover:border-amber-500/50 hover:text-amber-200">Web</button>
+        <button onclick="filterProjects('Multimedia')" class="filter-btn px-6 py-2.5 text-sm font-medium transition duration-300 font-serif-cinzel tracking-widest rounded-sm border cursor-pointer bg-slate-900/80 text-slate-400 border-slate-800 hover:border-amber-500/50 hover:text-amber-200">Multimedia</button>
+      </div>
+
+      <!-- Dynamic Category Header & Description (Game, Web, Multimedia, All) -->
+      <div id="category-header" class="mb-8 animate-fadeIn">
+        <div class="flex items-center gap-3 mb-3">
+          <h3 id="category-title" class="text-xl md:text-2xl font-bold font-serif-cinzel text-amber-200 flex items-center gap-2.5">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            <span>Koleksi Seluruh Proyek & Karya Terpilih</span>
+          </h3>
+          <div class="h-px bg-gradient-to-r from-amber-500/40 to-transparent flex-1"></div>
+          <span id="category-badge" class="text-xs text-slate-500 font-serif-cinzel hidden sm:inline-block">✧ Klik "Lihat Detail" untuk demo & mockup</span>
+        </div>
+        <p id="category-desc" class="text-slate-400 text-sm max-w-2xl leading-relaxed">
+          Kumpulan lengkap rekayasa perangkat lunak, game interaktif, sistem web fungsional, dan visualisasi data yang mencerminkan kapabilitas teknis serta eksplorasi lintas disiplin.
+        </p>
+      </div>
+
+      <!-- Project Grid (Proyek Game / Web / Multimedia) -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+        <!-- Projects dynamically populated from js/data.js -->
+      </div>
+
+      <!-- Section: Hasil Karya 3D Model (Kategori 3D) -->
+      <div id="section-3d-models" class="mt-16 pt-10 border-t border-slate-800/80 animate-fadeIn">
+        <div class="flex items-center gap-3 mb-4">
+          <h3 class="text-xl md:text-2xl font-bold font-serif-cinzel text-amber-200 flex items-center gap-2.5">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            <span>Galeri Karya 3D Model & Aset Game</span>
+          </h3>
+          <div class="h-px bg-gradient-to-r from-amber-500/40 to-transparent flex-1"></div>
+          <span class="text-xs text-slate-500 font-serif-cinzel hidden sm:inline-block">✧ Klik gambar untuk zoom</span>
+        </div>
+
+        <p class="text-slate-400 text-sm mb-8 max-w-2xl leading-relaxed">
+          Koleksi hasil pemodelan objek 3D, rancangan senjata, aset lingkungan (*environment*), dan modular kit yang dikembangkan menggunakan <span class="text-amber-400 font-semibold">Blender 3D</span> untuk kebutuhan game.
+        </p>
+
+        <!-- 3D Models Gallery Grid (Layout Gambar & Judul) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="models-grid">
+          <!-- 3D Models dynamically populated from js/data.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 5: CERTIFICATES --- -->
+  <section id="certificates" class="py-24 px-6 bg-slate-900/20 relative z-10 border-t border-indigo-900/30">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center gap-4 mb-14 justify-center md:justify-start">
+        <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        <h2 class="text-3xl md:text-4xl font-bold font-serif-cinzel text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-400">
+          Sertifikat & Penghargaan
+        </h2>
+        <div class="h-px bg-gradient-to-r from-amber-500/50 to-transparent flex-1 hidden md:block ml-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" id="certs-grid">
+        <!-- Certs dynamically populated from assets/js/data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 6: CONTACT --- -->
+  <section id="contact" class="py-14 px-6 bg-slate-950 relative z-10 border-t border-indigo-900/40">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="mb-8">
+        <span class="text-amber-400 font-serif-cinzel text-xs tracking-widest uppercase mb-1.5 block">
+          ✧ MARI TERHUBUNG & BERKOLABORASI ✧
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold font-serif-cinzel text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-600 mb-3">
+          Hubungi Saya
+        </h2>
+        <p class="text-slate-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+          Tertarik merekrut untuk magang, kolaborasi pembuatan game, pengembangan website, atau sekadar berdiskusi santai seputar teknologi? Pintu komunikasi selalu terbuka!
+        </p>
+      </div>
+
+      <!-- Status Box -->
+      <div class="bg-slate-900/70 px-5 py-3.5 rounded-sm border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.06)] mb-7 text-center max-w-2xl mx-auto">
+        <div class="flex items-center justify-center gap-2.5 mb-1">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <h4 class="font-serif-cinzel font-bold text-emerald-400 text-xs tracking-widest uppercase">
+            Status Ketersediaan
+          </h4>
+        </div>
+        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+          Aktif mencari peluang <span class="text-white font-semibold">Magang (Internship)</span> dan proyek <span class="text-white font-semibold">Freelance</span> di bidang Game Development, Web Programming, atau Data Analyst.
+        </p>
+      </div>
+
+      <!-- Contact Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left font-serif-lora max-w-4xl mx-auto">
+        <!-- Email -->
+        <a href="mailto:mahesa.erlangga@example.com" class="flex flex-col justify-between p-6 rounded-md bg-slate-900/60 border border-slate-800/90 hover:border-amber-500/60 hover:bg-slate-900/90 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(245,158,11,0.15)] transition-all duration-300 group">
+          <div>
+            <div class="p-3 bg-amber-500/10 text-amber-400 border border-amber-500/30 rounded-md w-fit mb-5 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div class="space-y-2">
+              <span class="text-xs font-semibold text-slate-400 block uppercase tracking-wider font-serif-cinzel">Email Resmi</span>
+              <span class="text-slate-100 font-medium group-hover:text-amber-300 transition-colors text-sm break-all leading-relaxed block">mahesa.erlangga@example.com</span>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-800/60">
+            <span class="text-[11px] text-amber-400/80 group-hover:text-amber-300 font-serif-cinzel tracking-wider flex items-center gap-1 font-semibold">
+              <span>Kirim Email</span>
+              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/6281234567890" target="_blank" rel="noreferrer" class="flex flex-col justify-between p-6 rounded-md bg-slate-900/60 border border-slate-800/90 hover:border-emerald-500/60 hover:bg-slate-900/90 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(16,185,129,0.15)] transition-all duration-300 group">
+          <div>
+            <div class="p-3 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-md w-fit mb-5 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m-3.53 3.42c-.19 0-.5.07-.76.35-.26.28-1 1-1 2.43 0 1.44 1.03 2.83 1.17 3.03.15.2 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.81.12.55-.08 1.71-.7 1.95-1.37.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.34s-1.71-.84-1.97-.94c-.26-.1-.45-.15-.65.14-.19.29-.75.94-.92 1.13-.17.19-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.08-.14-.65-1.57-.89-2.15-.24-.56-.48-.49-.65-.5-.17-.01-.36-.01-.55-.01Z"/>
+              </svg>
+            </div>
+            <div class="space-y-2">
+              <span class="text-xs font-semibold text-slate-400 block uppercase tracking-wider font-serif-cinzel">WhatsApp</span>
+              <span class="text-slate-100 font-medium group-hover:text-emerald-300 transition-colors text-sm break-all leading-relaxed block">+62 812-3456-7890</span>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-800/60">
+            <span class="text-[11px] text-emerald-400/80 group-hover:text-emerald-300 font-serif-cinzel tracking-wider flex items-center gap-1 font-semibold">
+              <span>Chat WhatsApp</span>
+              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="flex flex-col justify-between p-6 rounded-md bg-slate-900/60 border border-slate-800/90 hover:border-blue-500/60 hover:bg-slate-900/90 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(59,130,246,0.15)] transition-all duration-300 group">
+          <div>
+            <div class="p-3 bg-blue-500/10 text-blue-400 border border-blue-500/30 rounded-md w-fit mb-5 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </div>
+            <div class="space-y-2">
+              <span class="text-xs font-semibold text-slate-400 block uppercase tracking-wider font-serif-cinzel">LinkedIn</span>
+              <span class="text-slate-100 font-medium group-hover:text-blue-300 transition-colors text-sm break-all leading-relaxed block">linkedin.com/in/mahesa</span>
+            </div>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-800/60">
+            <span class="text-[11px] text-blue-400/80 group-hover:text-blue-300 font-serif-cinzel tracking-wider flex items-center gap-1 font-semibold">
+              <span>Kunjungi Profil</span>
+              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- FOOTER --- -->
+  <footer class="py-5 text-center border-t border-indigo-900/40 text-slate-500 text-sm bg-slate-950 relative z-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
+      <p class="font-serif-cinzel tracking-widest text-amber-500/80 text-xs mb-1 flex items-center gap-2">
+        <span>✧</span> DIBANGUN DENGAN PASSION, HTML, JS & TAILWINDCSS <span>✧</span>
+      </p>
+      <p class="text-slate-400 text-xs">© <span id="current-year">2026</span> Mahesa Erlangga Willyannanda. Hak Cipta Dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- --- MODAL 1: PROJECT DETAIL MODAL --- -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md animate-fadeIn" onclick="closeProjectModal()">
+    <div class="relative bg-slate-900 border-2 border-amber-500/50 shadow-[0_0_60px_rgba(245,158,11,0.2)] max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-sm p-6 md:p-8" onclick="event.stopPropagation()">
+      <button onclick="closeProjectModal()" class="absolute top-4 right-4 bg-slate-800 border border-amber-500 hover:bg-amber-600 hover:text-slate-950 text-amber-400 rounded-full p-2 transition-all shadow-lg z-20 cursor-pointer" aria-label="Tutup">
+        ✕
+      </button>
+
+      <div class="relative h-60 md:h-72 -mx-6 -mt-6 md:-mx-8 md:-mt-8 mb-6 overflow-hidden border-b border-slate-800">
+        <img id="modal-proj-image" src="" alt="Project Banner" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+        <div class="absolute bottom-4 left-6 md:left-8">
+          <span id="modal-proj-category" class="bg-amber-500 text-slate-950 px-3 py-1 text-xs font-bold font-serif-cinzel uppercase tracking-widest rounded-sm mb-2 inline-block">Game</span>
+          <h3 id="modal-proj-title" class="text-2xl md:text-4xl font-bold text-white font-serif-cinzel">Project Title</h3>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Gallery / Screenshots Section -->
+        <div id="modal-proj-gallery-container" class="space-y-2.5">
+          <div class="flex items-center justify-between">
+            <h4 class="text-xs font-bold text-amber-400 font-serif-cinzel uppercase tracking-widest flex items-center gap-2">
+              <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+              <span>Galeri Gambar & Mockup</span>
+            </h4>
+            <span class="text-[11px] text-slate-400 italic font-serif-lora">Klik gambar untuk melihat</span>
+          </div>
+          <div id="modal-proj-gallery" class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1"></div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-amber-400 font-serif-cinzel uppercase tracking-widest mb-2 flex items-center gap-2">
+            ✧ Ringkasan Proyek
+          </h4>
+          <p id="modal-proj-desc" class="text-slate-300 leading-relaxed text-justify"></p>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-amber-400 font-serif-cinzel uppercase tracking-widest mb-3 flex items-center gap-2">
+            ✧ Fitur & Pencapaian Utama
+          </h4>
+          <ul id="modal-proj-features" class="space-y-2 text-sm text-slate-300"></ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-amber-400 font-serif-cinzel uppercase tracking-widest mb-3 flex items-center gap-2">
+            ✧ Teknologi yang Digunakan
+          </h4>
+          <div id="modal-proj-tech" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <div class="pt-6 border-t border-slate-800 flex flex-wrap gap-4">
+          <a id="modal-proj-demo" href="#" target="_blank" class="px-5 py-2.5 bg-gradient-to-r from-amber-400 to-yellow-600 text-slate-950 font-bold font-serif-cinzel text-sm rounded-sm hover:scale-105 transition-all flex items-center gap-2 shadow-md">
+            <span>Buka Demo / Live Preview</span>
+          </a>
+          <a id="modal-proj-repo" href="#" target="_blank" class="px-5 py-2.5 border border-slate-700 bg-slate-950 text-slate-200 font-bold font-serif-cinzel text-sm rounded-sm hover:border-amber-400 hover:text-amber-300 transition-all flex items-center gap-2">
+            <span>Repository GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- MODAL 2: CERTIFICATE MODAL --- -->
+  <div id="cert-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md animate-fadeIn" onclick="closeCertModal()">
+    <div class="relative bg-slate-900 p-6 rounded-sm border-2 border-amber-500/50 shadow-[0_0_50px_rgba(245,158,11,0.2)] max-w-4xl w-full" onclick="event.stopPropagation()">
+      <button onclick="closeCertModal()" class="absolute -top-3 -right-3 bg-slate-800 border-2 border-amber-500 hover:bg-amber-600 hover:text-slate-900 text-amber-500 rounded-full p-2 transition-all shadow-lg z-10 cursor-pointer">
+        ✕
+      </button>
+      <div class="relative border border-slate-700 bg-slate-950 p-2 mb-6">
+        <img id="cert-modal-image" src="" alt="Sertifikat" class="w-full h-auto max-h-[65vh] object-contain mx-auto" />
+      </div>
+      <div class="text-center space-y-2">
+        <h3 id="cert-modal-title" class="text-2xl font-bold text-amber-100 font-serif-cinzel">Judul Sertifikat</h3>
+        <p id="cert-modal-meta" class="text-amber-500 tracking-widest uppercase text-sm font-serif-cinzel">Penerbit — Tahun</p>
+        <p id="cert-modal-desc" class="text-slate-400 text-sm max-w-xl mx-auto pt-2"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- MODAL 3: LIGHTBOX MODAL --- -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/95 backdrop-blur-lg animate-fadeIn" onclick="closeLightbox()">
+    <div class="relative max-w-4xl w-full" onclick="event.stopPropagation()">
+      <button onclick="closeLightbox()" class="absolute -top-12 right-0 bg-slate-800 border border-amber-500 hover:bg-amber-500 hover:text-slate-950 text-amber-400 rounded-full p-2 transition-all cursor-pointer">
+        ✕
+      </button>
+      <div class="bg-slate-900 p-2 border-2 border-amber-500/40 rounded-sm shadow-2xl">
+        <img id="lightbox-img" src="" alt="Dokumentasi" class="w-full h-auto max-h-[75vh] object-contain rounded-sm" />
+        <div class="p-3 text-center">
+          <p id="lightbox-title" class="text-slate-200 font-serif-cinzel text-sm"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- MODAL 4: CV PREVIEW MODAL --- -->
+  <div id="cv-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md animate-fadeIn" onclick="closeCvModal()">
+    <div class="relative bg-slate-900 border-2 border-amber-500/50 shadow-[0_0_50px_rgba(245,158,11,0.25)] max-w-2xl w-full p-6 md:p-8 rounded-sm" onclick="event.stopPropagation()">
+      <button onclick="closeCvModal()" class="absolute top-4 right-4 bg-slate-800 border border-amber-500 hover:bg-amber-600 hover:text-slate-950 text-amber-400 rounded-full p-1.5 transition-all cursor-pointer">
+        ✕
+      </button>
+
+      <div class="text-center mb-6">
+        <div class="inline-flex p-3 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 mb-3">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 17V5a2 2 0 0 0-2-2H4"/></svg>
+        </div>
+        <h3 class="text-2xl font-bold font-serif-cinzel text-amber-100">
+          Curriculum Vitae (Grimoire)
+        </h3>
+        <p class="text-slate-400 text-sm mt-1">
+          Mahesa Erlangga Willyannanda — Sistem Informasi (IPK: 3.94)
+        </p>
+      </div>
+
+      <div class="bg-slate-950 p-5 rounded-sm border border-slate-800 space-y-3 text-sm text-slate-300 mb-6">
+        <div class="flex justify-between border-b border-slate-800 pb-2">
+          <span class="text-slate-400">Pendidikan:</span>
+          <span class="font-semibold text-slate-200">S1 Sistem Informasi (Universitas Gunadarma)</span>
+        </div>
+        <div class="flex justify-between border-b border-slate-800 pb-2">
+          <span class="text-slate-400">Bidang Utama:</span>
+          <span class="font-semibold text-slate-200">Game Dev, Web Dev, Data Analysis</span>
+        </div>
+        <div class="flex justify-between border-b border-slate-800 pb-2">
+          <span class="text-slate-400">Pengalaman Kunci:</span>
+          <span class="font-semibold text-slate-200">Asisten Lab SI, Software Engineer Intern</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Format Berkas:</span>
+          <span class="font-semibold text-amber-400">PDF Terverifikasi</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <button onclick="window.print()" class="flex-1 py-3 bg-gradient-to-r from-amber-400 to-yellow-600 text-slate-950 font-bold font-serif-cinzel text-sm rounded-sm hover:scale-105 transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          <span>Simpan / Cetak PDF</span>
+        </button>
+        <button onclick="closeCvModal()" class="py-3 px-6 border border-slate-700 hover:border-slate-500 text-slate-300 font-serif-cinzel text-sm rounded-sm transition-all cursor-pointer">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- FLOATING BACK TO TOP BUTTON --- -->
+  <button id="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="fixed bottom-6 left-6 z-40 hidden bg-slate-900/90 text-amber-400 border border-amber-500/50 hover:border-amber-400 hover:bg-amber-500/10 p-3 rounded-sm shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all group cursor-pointer" title="Kembali ke Atas">
+    <svg class="w-5 h-5 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="12" x2="12" y1="19" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
+
+  <!-- ================= JAVASCRIPT SCRIPTS ================= -->
+  <!-- 1. Data Store (Pengalaman, Proyek, Sertifikat) -->
+  <script src="js/data.js"></script>
+
+  <!-- 2. Main Logic (Typing, Modals, Filter, Event Handlers) -->
+  <script src="js/main.js"></script>
+</body>
+</html>

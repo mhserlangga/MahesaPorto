@@ -1,0 +1,71 @@
+/* ==========================================================================
+   THEME STYLING - DARK FANTASY / GRIMOIRE DEVELOPER
+   Mahesa Erlangga Willyannanda Portfolio
+   ========================================================================== */
+
+body {
+  font-family: 'Lora', serif;
+  background-color: #020617;
+  color: #cbd5e1;
+  overflow-x: hidden;
+}
+
+.font-serif-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-serif-lora {
+  font-family: 'Lora', serif;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInAnim {
+  from { 
+    opacity: 0; 
+    transform: translateY(12px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes floatAnim {
+  0% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-12px); 
+  }
+  100% { 
+    transform: translateY(0px); 
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeInAnim 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: floatAnim 6s ease-in-out infinite;
+}
+
+/* --- CUSTOM MAGICAL SCROLLBAR --- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e1b4b;
+  border: 1px solid #4338ca;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
